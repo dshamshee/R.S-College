@@ -20,7 +20,7 @@ import {
               <div className="flex items-center justify-center gap-8 mb-12">
                   <hr className="hidden md:block w-24 border-t-2 border-blue-900" />
                   <h1 className="text-2xl text-blue-900 font-bold whitespace-nowrap">
-                      Important Links
+                      Important Things
                   </h1>
                   <hr className="hidden md:block w-24 border-t-2 border-blue-900" />
               </div>

@@ -28,7 +28,13 @@ export const Mentors = ()=>{
 
     return(
         <div className="MentorsContainer mt-10 flex flex-col items-center justify-center bg-gray-400/20 p-5">
-            <h1 className="text-center text-2xl font-bold mb-4">Our Mentors</h1>
+            <div className="flex items-center justify-center gap-8 mb-12">
+                  <hr className="hidden md:block w-24 border-t-2 border-blue-900" />
+                  <h1 className="text-2xl text-blue-900 font-bold whitespace-nowrap">
+                      Our Mentors
+                  </h1>
+                  <hr className="hidden md:block w-24 border-t-2 border-blue-900" />
+              </div>
 
             <div className="mentorsGrid grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4">
                 {
