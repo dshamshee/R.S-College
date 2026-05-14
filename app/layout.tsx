@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { NavHeader } from "@/components/navHeader";
 
 const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
 
@@ -43,6 +44,7 @@ export default function RootLayout({
         enableSystem
         disableTransitionOnChange
         >
+          <NavHeader />
           <Navbar />
           {children}
           <Footer />

@@ -39,7 +39,7 @@ export default function Updates(){
             {/* Examination */}
             {/* News */}
             {/* Other */}
-            <div className="heads grid grid-cols-3 w-full text-center font-bold">
+            <div className="heads mb-2 grid grid-cols-3 w-full text-center text-lg font-semibold">
                 <h1>Notice</h1>
                 <h1>Examination</h1>
                 <h1>Tender</h1>

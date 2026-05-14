@@ -10,30 +10,27 @@ import {
 export default function Navbar() {
 
     return (
-        <NavigationMenu className={"bg-blue-900 text-white"}>
+        <NavigationMenu className={"bg-[#002b5b] text-white"}>
             <NavigationMenuList>
 
                 
                 {/* Home */}
-                <NavigationMenuItem>
+                <NavigationMenuItem className={'hover:text-black'}>
                     <NavigationMenuLink href="/">Home</NavigationMenuLink>
                 </NavigationMenuItem>
 
                 {/* About Us */}
-                <NavigationMenuItem>
+                <NavigationMenuItem className={'hover:text-black'}>
                     <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <NavigationMenuLink href="/about/college">About College</NavigationMenuLink>
                         <NavigationMenuLink href="/about/principal">Our Principal</NavigationMenuLink>
-                        <NavigationMenuLink href="/about/vision">Our Vision</NavigationMenuLink>
-                        <NavigationMenuLink href="/about/mission">Our Mission</NavigationMenuLink>
-                        <NavigationMenuLink href="/about/values">Our Values</NavigationMenuLink>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
 
 
                 {/* Academics */}
-                <NavigationMenuItem>
+                <NavigationMenuItem className={'hover:text-black'}>
                     <NavigationMenuTrigger>Academics</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <NavigationMenuLink href="/academics/courses">Courses</NavigationMenuLink>
@@ -46,7 +43,7 @@ export default function Navbar() {
 
 
                 {/* Infrastructure */}
-                <NavigationMenuItem>
+                <NavigationMenuItem className={'hover:text-black'}>
                     <NavigationMenuTrigger>Infrastructure</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <NavigationMenuLink href="/infrastructure/conference-hall">Conference Hall</NavigationMenuLink>
@@ -62,7 +59,7 @@ export default function Navbar() {
 
 
                 {/* Gallery */}
-                <NavigationMenuItem>
+                <NavigationMenuItem className={'hover:text-black'}>
                     <NavigationMenuTrigger>Gallery</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <NavigationMenuLink href="/gallery/photo">Photo Gallery</NavigationMenuLink>
@@ -74,7 +71,7 @@ export default function Navbar() {
 
 
                 {/* Student Zone */}
-                <NavigationMenuItem>
+                <NavigationMenuItem className={'hover:text-black'}>
                     <NavigationMenuTrigger>Student Zone</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <NavigationMenuLink href="/student/login">Student Login</NavigationMenuLink>
@@ -88,7 +85,7 @@ export default function Navbar() {
 
 
                 {/* Contact Us */}
-                <NavigationMenuItem>
+                <NavigationMenuItem className={'hover:text-black'}>
                     <NavigationMenuLink href="/contact">Contact Us</NavigationMenuLink>
                 </NavigationMenuItem>
 
