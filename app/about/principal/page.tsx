@@ -32,7 +32,7 @@ export default function Principal() {
 
             <div className="bg-white border border-slate-100 p-8 rounded-3xl shadow-sm space-y-4">
               <div>
-                <h2 className="text-2xl font-bold text-blue-900">Dr. [Full Name]</h2>
+                <h2 className="text-2xl font-bold text-blue-900">Dr. Samrat Chaudhary</h2>
                 <p className="text-blue-600 font-semibold text-sm">Principal, R.S. College</p>
               </div>
               
@@ -111,7 +111,7 @@ export default function Principal() {
             {/* Signature Section */}
             <div className="pt-10 flex flex-col items-end">
               <div className="w-48 h-16 border-b border-slate-300 mb-2" />
-              <p className="font-bold text-blue-900">Dr. [Full Name]</p>
+              <p className="font-bold text-blue-900">Dr. Samrat Chaudhary</p>
               <p className="text-sm text-slate-500 italic">Principal, R.S. College</p>
             </div>
           </div>

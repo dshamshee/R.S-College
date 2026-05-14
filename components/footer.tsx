@@ -56,9 +56,9 @@ export const Footer = () => {
             </h3>
             <div className="text-sm text-gray-300 flex flex-col gap-2">
               <p className="font-medium text-white">Ramdev Sharda College</p>
-              <p>Purnea, Bihar-854301,</p>
+              <p>Katihar, Bihar-854301,</p>
               <p className="mt-2">Ph : 0621-2222222</p>
-              <p>Email : info@rscollege.ac.in</p>
+              <p>Email : info@rscollege.in</p>
             </div>
             
             {/* Social Icons */}
@@ -73,7 +73,7 @@ export const Footer = () => {
       {/* Bottom Section: Copyright and Credits */}
       <div className="bg-[#dc2626] text-white py-4 px-6 md:px-16">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[12px] gap-4">
-          <p>Copyright © 2009 Ramdev Sharda College, Purnea.</p>
+          <p>Copyright © 2009 Ramdev Sharda College, Katihar.</p>
           
           <div className="flex items-center gap-4">
             <p>Designed by : Vastaman Solutions | Site Admin | Site Visited :</p>

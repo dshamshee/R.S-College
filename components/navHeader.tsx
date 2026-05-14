@@ -19,10 +19,10 @@ export const NavHeader = () => {
         </div>
         <div className="txt flex flex-col">
           <h1 className="text-xl font-bold text-[#1a237e] leading-tight">
-            रामदेव शारदा कॉलेज, सालमरी, पूर्णिया
+            रामदेव शारदा कॉलेज, सालमरी, कटिहार
           </h1>
           <h1 className="text-lg font-bold text-[#1a237e] leading-tight uppercase tracking-tight">
-            Ramdev Sharda College, Salmari, Purnea
+            Ramdev Sharda College, Salmari, Katihar
           </h1>
           <p className="text-sm text-slate-500 font-medium">
             Affiliated to Purnea University, Purnea
