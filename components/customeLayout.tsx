@@ -1,12 +1,25 @@
+"use client";
 // @/components/customeLayout.tsx
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
-export const CustomLayout = ({ children }: { children: React.ReactNode }) => {
+export const CustomLayout = ({ children}: { children: React.ReactNode}) => {
+
+    const pathname = usePathname();
+    // console.log('pathname', pathname.split('/')[1]);
+
+    const headerImage = pathname.split('/')[1] === 'about' ?
+     'about-college.jpg' : pathname.split('/')[1] === 'infrastructure' ? 
+     'infrastructure.jpg' : pathname.split('/')[1] === 'academics' ? 
+     'academics.jpg' : pathname.split('/')[1] === 'gallery' ? 
+     'gallery' : pathname.split('/')[1] === 'student-zone' ? 
+     'student-zone' : 'Enterence';
+
     return (
         <div className="customLayoutContainer w-full min-h-screen bg-background">
             <div className="headImage relative w-full h-[300px] md:h-[300px]">
                 <Image 
-                    src="/images/Enterence.png" 
+                    src={`/images/${headerImage}`} 
                     alt="College Entrance" 
                     fill // Use fill for better responsiveness in Next.js
                     priority
