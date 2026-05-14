@@ -12,7 +12,7 @@ const updatesSchema = new Schema({
     },
     type: {
         type: String,
-        enum: ["NOTICE", "EXAMINATION", "NEWS", "OTHER"],
+        enum: ["NOTICE", "EXAMINATION", "NEWS", "TENDER"],
         required: true,
     },
     files: {
@@ -33,7 +33,8 @@ const updatesSchema = new Schema({
 
 
 // Extract the type from the schema
-export type UpdatesType = InferSchemaType<typeof updatesSchema>;
+export type UpdatesType = InferSchemaType<typeof updatesSchema> & { _id: string };
+
 
 
 let UpdatesModel: mongoose.Model<UpdatesType>;
