@@ -4,7 +4,7 @@ import Image from "next/image";
 export const CustomLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="customLayoutContainer w-full min-h-screen bg-background">
-            <div className="headImage relative w-full h-[300px] md:h-[450px]">
+            <div className="headImage relative w-full h-[300px] md:h-[300px]">
                 <Image 
                     src="/images/Enterence.png" 
                     alt="College Entrance" 

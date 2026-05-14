@@ -46,7 +46,7 @@ export default function Navbar() {
                 <NavigationMenuItem className={'hover:text-black'}>
                     <NavigationMenuTrigger>Infrastructure</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <NavigationMenuLink href="/infrastructure/conference-hall">Conference Hall</NavigationMenuLink>
+                        <NavigationMenuLink href="/infrastructure/conference">Conference Hall</NavigationMenuLink>
                         <NavigationMenuLink href="/infrastructure/auditorium">Auditorium</NavigationMenuLink>
                         <NavigationMenuLink href="/infrastructure/laboratories">Laboratories</NavigationMenuLink>
                         <NavigationMenuLink href="/infrastructure/library">Library</NavigationMenuLink>
