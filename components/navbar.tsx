@@ -1,3 +1,5 @@
+"use client"
+
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -7,89 +9,210 @@ import {
     NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 
+import {
+    Sheet,
+    SheetContent,
+    SheetTrigger,
+} from "@/components/ui/sheet"
+
+import {
+    Accordion,
+    AccordionContent,
+    AccordionItem,
+    AccordionTrigger,
+} from "@/components/ui/accordion"
+
+import { Menu } from "lucide-react"
+import Link from "next/link"
+
+const navItems = [
+    {
+        title: "About Us",
+        links: [
+            { label: "About College", href: "/about/college" },
+            { label: "Our Principal", href: "/about/principal" },
+        ],
+    },
+    {
+        title: "Academics",
+        links: [
+            { label: "Courses", href: "/academics/courses" },
+            { label: "Departments", href: "/academics/departments" },
+            { label: "Faculties", href: "/academics/faculties" },
+            { label: "Admissions", href: "/academics/admissions" },
+            { label: "Research", href: "/academics/research" },
+        ],
+    },
+    {
+        title: "Infrastructure",
+        links: [
+            { label: "Conference Hall", href: "/infrastructure/conference" },
+            { label: "Auditorium", href: "/infrastructure/auditorium" },
+            { label: "Laboratories", href: "/infrastructure/laboratories" },
+            { label: "Library", href: "/infrastructure/library" },
+            { label: "Computer Lab", href: "/infrastructure/computer-lab" },
+            { label: "Health Center", href: "/infrastructure/health" },
+            { label: "Sports Complex", href: "/infrastructure/sports" },
+        ],
+    },
+    {
+        title: "Gallery",
+        links: [
+            { label: "Photo Gallery", href: "/gallery/photo" },
+            { label: "Video Gallery", href: "/gallery/video" },
+        ],
+    },
+    {
+        title: "Student Zone",
+        links: [
+            { label: "Student Login", href: "/student/login" },
+            { label: "Student Registration", href: "/student/registration" },
+            { label: "Student Results", href: "/student/results" },
+            { label: "Student Attendance", href: "/student/attendance" },
+            { label: "Student Fees", href: "/student/fees" },
+            { label: "Student Library", href: "/student/library" },
+        ],
+    },
+]
+
 export default function Navbar() {
-
     return (
-        <NavigationMenu className={"bg-[#002b5b] text-white"}>
-            <NavigationMenuList>
+        <nav className="sticky top-0 z-50 w-full bg-[#002b5b] text-white shadow-md">
 
-                
-                {/* Home */}
-                <NavigationMenuItem className={'hover:text-black'}>
-                    <NavigationMenuLink href="/">Home</NavigationMenuLink>
-                </NavigationMenuItem>
+            {/* Desktop Navbar */}
+            <div className="hidden lg:flex justify-center">
+                <NavigationMenu>
+                    <NavigationMenuList>
 
-                {/* About Us */}
-                <NavigationMenuItem className={'hover:text-black'}>
-                    <NavigationMenuTrigger>About Us</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <NavigationMenuLink href="/about/college">About College</NavigationMenuLink>
-                        <NavigationMenuLink href="/about/principal">Our Principal</NavigationMenuLink>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                        {/* Home */}
+                        <NavigationMenuItem>
+                            <NavigationMenuLink
+                                href="/"
+                                className="px-4 py-2 hover:bg-white/10 hover:text-white transition-colors"
+                            >
+                                Home
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
 
+                        {/* Dynamic Items */}
+                        {navItems.map((item) => (
+                            <NavigationMenuItem key={item.title}>
 
-                {/* Academics */}
-                <NavigationMenuItem className={'hover:text-black'}>
-                    <NavigationMenuTrigger>Academics</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <NavigationMenuLink href="/academics/courses">Courses</NavigationMenuLink>
-                        <NavigationMenuLink href="/academics/departments">Departments</NavigationMenuLink>
-                        <NavigationMenuLink href="/academics/faculties">Faculties</NavigationMenuLink>
-                        <NavigationMenuLink href="/academics/admissions">Admissions</NavigationMenuLink>
-                        <NavigationMenuLink href="/academics/research">Research</NavigationMenuLink>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                                <NavigationMenuTrigger className="bg-transparent hover:bg-white/10 hover:text-white">
+                                    {item.title}
+                                </NavigationMenuTrigger>
 
+                                <NavigationMenuContent>
+                                    <div className="flex min-w-[240px] flex-col gap-1 bg-white p-3 text-black shadow-lg">
 
-                {/* Infrastructure */}
-                <NavigationMenuItem className={'hover:text-black'}>
-                    <NavigationMenuTrigger>Infrastructure</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <NavigationMenuLink href="/infrastructure/conference">Conference Hall</NavigationMenuLink>
-                        <NavigationMenuLink href="/infrastructure/auditorium">Auditorium</NavigationMenuLink>
-                        <NavigationMenuLink href="/infrastructure/laboratories">Laboratories</NavigationMenuLink>
-                        <NavigationMenuLink href="/infrastructure/library">Library</NavigationMenuLink>
-                        <NavigationMenuLink href="/infrastructure/computer-lab">Computer Lab</NavigationMenuLink>
-                        <NavigationMenuLink href="/infrastructure/health">Health Center</NavigationMenuLink>
-                        <NavigationMenuLink href="/infrastructure/sports">Sports Complex</NavigationMenuLink>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                                        {item.links.map((link) => (
+                                            <NavigationMenuLink
+                                                key={link.href}
+                                                href={link.href}
+                                                className="rounded-md px-3 py-2 text-sm transition-colors hover:bg-slate-100"
+                                            >
+                                                {link.label}
+                                            </NavigationMenuLink>
+                                        ))}
 
+                                    </div>
+                                </NavigationMenuContent>
 
+                            </NavigationMenuItem>
+                        ))}
 
-                {/* Gallery */}
-                <NavigationMenuItem className={'hover:text-black'}>
-                    <NavigationMenuTrigger>Gallery</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <NavigationMenuLink href="/gallery/photo">Photo Gallery</NavigationMenuLink>
-                        <NavigationMenuLink href="/gallery/video">Video Gallery</NavigationMenuLink>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                        {/* Contact */}
+                        <NavigationMenuItem>
+                            <NavigationMenuLink
+                                href="/contact"
+                                className="px-4 py-2 hover:bg-white/10 hover:text-white transition-colors"
+                            >
+                                Contact Us
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
 
+                    </NavigationMenuList>
+                </NavigationMenu>
+            </div>
 
+            {/* Mobile Navbar */}
+            <div className="flex h-16 items-center justify-between px-4 lg:hidden">
 
+                {/* Logo */}
+                <h1 className="text-lg font-bold tracking-wide">
+                    R.S College
+                </h1>
 
-                {/* Student Zone */}
-                <NavigationMenuItem className={'hover:text-black'}>
-                    <NavigationMenuTrigger>Student Zone</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <NavigationMenuLink href="/student/login">Student Login</NavigationMenuLink>
-                        <NavigationMenuLink href="/student/registration">Student Registration</NavigationMenuLink>
-                        <NavigationMenuLink href="/student/results">Student Results</NavigationMenuLink>
-                        <NavigationMenuLink href="/student/attendance">Student Attendance</NavigationMenuLink>
-                        <NavigationMenuLink href="/student/fees">Student Fees</NavigationMenuLink>
-                        <NavigationMenuLink href="/student/library">Student Library</NavigationMenuLink>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                {/* Mobile Menu */}
+                <Sheet>
 
+                    <SheetTrigger className="rounded-md p-2 hover:bg-white/10">
+                        <Menu size={28} />
+                    </SheetTrigger>
 
-                {/* Contact Us */}
-                <NavigationMenuItem className={'hover:text-black'}>
-                    <NavigationMenuLink href="/contact">Contact Us</NavigationMenuLink>
-                </NavigationMenuItem>
+                    <SheetContent
+                        side="right"
+                        className="w-[85%] overflow-y-auto border-none bg-[#002b5b] text-white sm:w-[350px]"
+                    >
+                        <div className="mt-8 flex flex-col gap-2">
 
-            </NavigationMenuList>
-        </NavigationMenu>
+                            {/* Home */}
+                            <Link
+                                href="/"
+                                className="rounded-md px-4 py-3 text-base font-medium transition-colors hover:bg-white/10"
+                            >
+                                Home
+                            </Link>
+
+                            {/* Accordion */}
+                            <Accordion className="w-full">
+
+                                {navItems.map((item, index) => (
+                                    <AccordionItem
+                                        key={item.title}
+                                        value={`item-${index}`}
+                                        className="border-white/10"
+                                    >
+
+                                        <AccordionTrigger className="px-4 hover:no-underline">
+                                            {item.title}
+                                        </AccordionTrigger>
+
+                                        <AccordionContent>
+                                            <div className="flex flex-col gap-1 pl-2">
+
+                                                {item.links.map((link) => (
+                                                    <a
+                                                        key={link.href}
+                                                        href={link.href}
+                                                        className="rounded-md px-4 py-2 text-sm text-white/80 transition-colors hover:bg-white/10 hover:text-white"
+                                                    >
+                                                        {link.label}
+                                                    </a>
+                                                ))}
+
+                                            </div>
+                                        </AccordionContent>
+
+                                    </AccordionItem>
+                                ))}
+
+                            </Accordion>
+
+                            {/* Contact */}
+                            <a
+                                href="/contact"
+                                className="rounded-md px-4 py-3 text-base font-medium transition-colors hover:bg-white/10"
+                            >
+                                Contact Us
+                            </a>
+
+                        </div>
+                    </SheetContent>
+
+                </Sheet>
+
+            </div>
+        </nav>
     )
 }

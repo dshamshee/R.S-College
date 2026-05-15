@@ -37,7 +37,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", notoSans.variable, playfairDisplayHeading.variable)}
     >
-      <body className="">
+      <body>
         <ThemeProvider
         attribute="class"
         defaultTheme="light"
