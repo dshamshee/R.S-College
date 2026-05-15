@@ -65,12 +65,10 @@ const navItems = [
     {
         title: "Student Zone",
         links: [
-            { label: "Student Login", href: "/student/login" },
-            { label: "Student Registration", href: "/student/registration" },
-            { label: "Student Results", href: "/student/results" },
-            { label: "Student Attendance", href: "/student/attendance" },
-            { label: "Student Fees", href: "/student/fees" },
-            { label: "Student Library", href: "/student/library" },
+            { label: "Holidays", href: "/student/holidays" },
+            { label: "Time Table", href: "/student/time-table" },
+            { label: "Syllabus", href: "/student/syllabus" },
+            { label: "Results", href: "/student/results" },
         ],
     },
 ]
@@ -98,7 +96,7 @@ export default function Navbar() {
                         {navItems.map((item) => (
                             <NavigationMenuItem key={item.title}>
 
-                                <NavigationMenuTrigger className="bg-transparent hover:bg-white/10 hover:text-white">
+                                <NavigationMenuTrigger className="bg-transparent hover:text-black text-white">
                                     {item.title}
                                 </NavigationMenuTrigger>
 

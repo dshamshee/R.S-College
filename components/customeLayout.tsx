@@ -13,7 +13,7 @@ export const CustomLayout = ({ children}: { children: React.ReactNode}) => {
      'infrastructure.jpg' : pathname.split('/')[1] === 'academics' ? 
      'academics.jpg' : pathname.split('/')[1] === 'gallery' ? 
      'gallery' : pathname.split('/')[1] === 'student-zone' ? 
-     'student-zone' : 'Enterence';
+     'student-zone' : 'student.jpg';
 
     return (
         <div className="customLayoutContainer w-full min-h-screen bg-background">
