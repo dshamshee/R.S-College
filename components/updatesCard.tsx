@@ -21,7 +21,7 @@ export const UpdatesCard = ({ updates, borderColor }: { updates: UpdatesType[], 
     return (
         <>
             <style>{animationStyles}</style>
-            <Card className={`group relative rounded-md w-[400px] h-[350px] border-l-8 ${borderColor} overflow-hidden bg-background`}>
+            <Card className={`group relative rounded-md w-[330px] h-[380px] border-l-8 ${borderColor} overflow-hidden bg-background`}>
                 <div className="h-full py-2">
                     {/* 
                         - animate-[scrollUp_20s_linear_infinite]: Uses the keyframes defined above
