@@ -12,7 +12,7 @@ export const CustomLayout = ({ children}: { children: React.ReactNode}) => {
      'about-college.jpg' : pathname.split('/')[1] === 'infrastructure' ? 
      'infrastructure.jpg' : pathname.split('/')[1] === 'academics' ? 
      'academics.jpg' : pathname.split('/')[1] === 'gallery' ? 
-     'gallery' : pathname.split('/')[1] === 'student-zone' ? 
+     'infrastructure.jpg' : pathname.split('/')[1] === 'student-zone' ? 
      'student-zone' : 'student.jpg';
 
     return (
