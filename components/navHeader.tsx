@@ -22,10 +22,10 @@ export const NavHeader = () => {
               रामदेव शारदा कॉलेज, सालमरी, कटिहार
             </h1>
             <h1 className="text-sm md:text-lg font-bold text-[#1a237e] leading-tight uppercase tracking-tight">
-              Ramdev Sharda College, Salmari, Katihar
+              {process.env.COLLEGE_NAME}, {process.env.COLLEGE_CITY}, {process.env.COLLEGE_DISTRICT}
             </h1>
             <p className="text-[10px] md:text-sm text-slate-500 font-medium italic">
-              Affiliated to Purnea University, Purnea
+              Affiliated to {process.env.UNIVERSITY_NAME}, {process.env.UNIVERSITY_DISTRICT}
             </p>
           </div>
         </div>
@@ -55,11 +55,11 @@ export const NavHeader = () => {
             <div className="flex flex-row lg:flex-col items-center lg:items-end gap-x-4 gap-y-0 text-xs md:text-sm font-bold text-slate-800">
               <div className="flex items-center gap-1.5">
                 <Phone className="w-3.5 h-3.5 text-pink-600 fill-pink-600" />
-                <span className="whitespace-nowrap">+91-XXXXX XXXXX</span>
+                <span className="whitespace-nowrap">+91-{process.env.COLLEGE_PHONE}</span>
               </div>
               <div className="hidden sm:flex items-center gap-1.5 font-semibold text-slate-600 text-[10px] md:text-xs">
                 <Mail className="w-3.5 h-3.5" />
-                <span>rscollege@gmail.com</span>
+                <span>{process.env.COLLEGE_EMAIL}</span>
               </div>
             </div>
             

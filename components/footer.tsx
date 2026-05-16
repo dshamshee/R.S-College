@@ -14,7 +14,8 @@ export const Footer = () => {
     {
       title: "Important Links",
       links: [
-        "Purnea University (Purnea)",
+        `${process.env.UNIVERSITY_NAME?.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
+         (${process.env.UNIVERSITY_DISTRICT!.charAt(0).toUpperCase() + process.env.UNIVERSITY_DISTRICT!.slice(1).toLowerCase()})`,
         "RTI",
         "UGC",
         "AICTE",
@@ -55,10 +56,10 @@ export const Footer = () => {
               Contact us
             </h3>
             <div className="text-sm text-gray-300 flex flex-col gap-2">
-              <p className="font-medium text-white">Ramdev Sharda College</p>
-              <p>Katihar, Bihar-854301,</p>
-              <p className="mt-2">Ph : 0621-2222222</p>
-              <p>Email : info@rscollege.in</p>
+              <p className="font-medium text-white">{process.env.COLLEGE_NAME?.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</p>
+              <p>{process.env.COLLEGE_DISTRICT!.charAt(0).toUpperCase() + process.env.COLLEGE_DISTRICT!.slice(1).toLowerCase()}, {process.env.COLLEGE_STATE!.charAt(0).toUpperCase() + process.env.COLLEGE_STATE!.slice(1).toLowerCase()}-{process.env.COLLEGE_PINCODE},</p>
+              <p className="mt-2">Ph : +91-{process.env.COLLEGE_PHONE}</p>
+              <p>Email : {process.env.COLLEGE_EMAIL}</p>
             </div>
             
             {/* Social Icons */}
@@ -73,7 +74,7 @@ export const Footer = () => {
       {/* Bottom Section: Copyright and Credits */}
       <div className="bg-[#dc2626] text-white py-4 px-6 md:px-16">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[12px] gap-4">
-          <p>Copyright © 2009 Ramdev Sharda College, Katihar.</p>
+          <p>Copyright © 2009 {process.env.COLLEGE_NAME?.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}, {process.env.COLLEGE_DISTRICT!.charAt(0).toUpperCase() + process.env.COLLEGE_DISTRICT!.slice(1).toLowerCase()}.</p>
           
           <div className="flex items-center gap-4">
             <p>Designed by : Vastaman Solutions | Site Admin | Site Visited :</p>
