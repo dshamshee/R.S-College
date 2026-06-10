@@ -4,25 +4,25 @@ import { Card } from "./ui/card"
 export const Mentors = () => {
   const mentors = [
     {
-      name: "Aditya Suman",
-      image: "/images/samrat-chaudhary.jpeg",
-      designation: "Director"
+      name: "Lt Gen Syed Ata Hasnain (Retd.)",
+      image: "/images/governor.avif",
+      designation: "Hon'ble Chancellor-cum-Governor of Bihar"
     },
     {
-      name: "Amit Kumar",
-      image: "/images/tejaswi.jpg",
-      designation: "Deputy Director"
+      name: "Samrat Chaudhary",
+      image: "/images/samrat-chaudhary.jpeg",
+      designation: "Hon'ble Chief Minister, Bihar"
     },
     {
       name: "Sanjay Kumar",
-      image: "/images/teju.jpg",
-      designation: "Associate Professor"
+      image: "/images/demouser.jpg",
+      designation: "Principal"
     },
-    {
-      name: "Rajesh Kumar",
-      image: "/images/anant.png",
-      designation: "Professor"
-    }
+    // {
+    //   name: "Rajesh Kumar",
+    //   image: "/images/anant.png",
+    //   designation: "Professor"
+    // }
   ]
 
   return (
@@ -38,10 +38,10 @@ export const Mentors = () => {
       </div>
 
       {/* Grid: 1 col on mobile, 2 on tablet, 4 on desktop */}
-      <div className="mentorsGrid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl">
+      <div className="mentorsGrid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
         {mentors.map((mentor, index) => (
           <Card 
-            className="mentorCard group overflow-hidden rounded-2xl border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-white" 
+            className="mentorCard group w-[400px] h-[400px] overflow-hidden rounded-2xl border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-white" 
             key={index}
           >
             {/* Aspect ratio wrapper prevents layout shift */}
@@ -50,11 +50,11 @@ export const Mentors = () => {
                 src={mentor.image} 
                 alt={mentor.name} 
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                className="object-contain group-hover:scale-105 transition-transform duration-500" 
               />
             </div>
             
-            <div className="flex flex-col items-center justify-center p-6">
+            <div className="flex flex-col items-center justify-center">
               <h2 className="text-center text-lg font-bold text-slate-800 leading-tight">
                 {mentor.name}
               </h2>

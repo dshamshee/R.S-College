@@ -1,5 +1,5 @@
 import Link from "next/link";
-import {Mail, X,} from "lucide-react";
+import { Mail, X, } from "lucide-react";
 
 export const Footer = () => {
   const footerSections = [
@@ -32,7 +32,7 @@ export const Footer = () => {
       {/* Top Section: Links and Contact */}
       <div className="bg-[#002b5b] text-white py-12 px-6 md:px-16">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          
+
           {footerSections.map((section, idx) => (
             <div key={idx} className="flex flex-col gap-4">
               <h3 className="text-lg font-semibold border-b border-blue-400/30 pb-2 w-fit pr-10">
@@ -61,7 +61,7 @@ export const Footer = () => {
               <p className="mt-2">Ph : +91-{process.env.COLLEGE_PHONE}</p>
               <p>Email : {process.env.COLLEGE_EMAIL}</p>
             </div>
-            
+
             {/* Social Icons */}
             <div className="flex gap-4 mt-4">
               <Mail className="w-6 h-6 cursor-pointer hover:text-blue-400 transition-all" />
@@ -74,8 +74,9 @@ export const Footer = () => {
       {/* Bottom Section: Copyright and Credits */}
       <div className="bg-[#dc2626] text-white py-4 px-6 md:px-16">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-[12px] gap-4">
-          <p>Copyright © 2009 {process.env.COLLEGE_NAME?.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}, {process.env.COLLEGE_DISTRICT!.charAt(0).toUpperCase() + process.env.COLLEGE_DISTRICT!.slice(1).toLowerCase()}.</p>
-          
+          <p>Copyright © 2009 {process.env.COLLEGE_NAME?.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')},
+            {process.env.COLLEGE_DISTRICT!.charAt(0).toUpperCase() + process.env.COLLEGE_DISTRICT!.slice(1).toLowerCase()}.</p>
+
           <div className="flex items-center gap-4">
             <p>Designed by : Vastaman Solutions | Site Admin | Site Visited :</p>
             {/* Visitor Counter Stylized */}
