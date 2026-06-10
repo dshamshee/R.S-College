@@ -9,7 +9,7 @@ export const facultyData  = [
         email: "samdariapankaj74@gmail.com",
         phone: "",
         type: "TEACHING",
-        image: ""
+        image: "/images/demouser.jpg"
     },
     {
         name: "Dr. Manoj Kumar",
@@ -18,7 +18,7 @@ export const facultyData  = [
         email: "",
         phone: "7909006243",
         type: "TEACHING",
-        image: ""
+        image: "/images/demouser.jpg"
     },
     {
         name: "Dr. Shashikant Kumar Priyadarshi",
@@ -27,7 +27,7 @@ export const facultyData  = [
         email: "",
         phone: "",  
         type: "TEACHING",
-        image: "ShashikantKumarPriyadarshi.jpg"
+        image: "/images/faculty/ShashikantKumarPriyadarshi.jpg"
     },
     {
         name: "DR. MANDEEP KUMAR",
@@ -36,7 +36,7 @@ export const facultyData  = [
         email: "",
         phone: "",
         type: "TEACHING",
-        image: "MandeepKumar.jpg"
+        image: "/images/faculty/MandeepKumar.jpg"
     },
     {
         name: "Dr. Kunal Bharti",
@@ -45,7 +45,7 @@ export const facultyData  = [
         email: "kunalbharti075@gmail.com",
         phone: "9534914075",
         type: "TEACHING",
-        image: ""
+        image: "/images/demouser.jpg"
     },
     {
         name: "Dr. Abhinav Das",
@@ -54,7 +54,7 @@ export const facultyData  = [
         email: "abhinavdas@hotmail.com",
         phone: "8130323599",
         type: "TEACHING",
-        image: "AbhinavDas.jpg"
+        image: "/images/faculty/AbhinavDas.jpg"
     },
     {
         name: "	Dr. Ram Babu Singh",
@@ -63,7 +63,7 @@ export const facultyData  = [
         email: "ram9934ram1144@gmail.com",
         phone: "9708920821",
         type: "TEACHING",
-        image: "RamBabuSingh.jpg"
+        image: "/images/faculty/RamBabuSingh.jpg"
     },
     {
         name: "Dr. Sunny Kumar",
@@ -72,7 +72,7 @@ export const facultyData  = [
         email: "sunnypandey1996@gmail.com",
         phone: "9471498312",
         type: "TEACHING",
-        image: "SunnyKumar.jpg"
+        image: "/images/faculty/SunnyKumar.jpg"
     },
     {
         name: "Dr. Suraj Kumar",
@@ -81,7 +81,7 @@ export const facultyData  = [
         email: "639suraj@gmail.com",
         phone: "7004285957",
         type: "TEACHING",
-        image: "SurajKumar.jpg"
+        image: "/images/faculty/SurajKumar.jpg"
     },
     {
         name: "Dr. Abhishek Kumar",
@@ -90,7 +90,7 @@ export const facultyData  = [
         email: "abhi18797shek@gmail.com",
         phone: "8709105801",
         type: "TEACHING",
-        image: "Abhishekkumar.jpg"
+        image: "/images/faculty/Abhishekkumar.jpg"
     },
     {
         name: "Dr. Manoj Kumar Pandey",
@@ -99,7 +99,7 @@ export const facultyData  = [
         email: "mkpandey139a@gmail.com",
         phone: "9838319498",
         type: "TEACHING",
-        image: "ManojKumarPandey.jpg"
+        image: "/images/faculty/ManojKumarPandey.jpg"
     },
     {
         name: "Mr. Hira Lal",
@@ -108,7 +108,7 @@ export const facultyData  = [
         email: "gurujihira@gmail.com",
         phone: "9911625646",
         type: "TEACHING",
-        image: "HiraLal.jpg"
+        image: "/images/faculty/HiraLal.jpg"
     },
     {
         name: "Mr. Praful Kumar",
@@ -117,7 +117,7 @@ export const facultyData  = [
         email: "pankajpraful03@gmail.com",
         phone: "8882539344",
         type: "TEACHING",
-        image: "PrafulKumar.jpg"
+        image: "/images/faculty/PrafulKumar.jpg"
     },
     {
         name: "Dr. Tikeshwar Prasad Janghel",
@@ -126,7 +126,7 @@ export const facultyData  = [
         email: "tikku.janghel@gmail.com",
         phone: "7354181058",
         type: "TEACHING",
-        image: "TikeshwarPrasadJanghel.jpg"
+        image: "/images/faculty/TikeshwarPrasadJanghel.jpg"
     },
     {
         name: "Dr. Nawal Kishore Pintu",
@@ -135,7 +135,7 @@ export const facultyData  = [
         email: "pintuaryan7@gmail.com",
         phone: "9631452576",
         type: "TEACHING",
-        image: "NawalKishorePintu.jpg"
+        image: "/images/faculty/NawalKishorePintu.jpg"
     },
     {
         name: "Dr. Pallav Kumar",
@@ -144,7 +144,7 @@ export const facultyData  = [
         email: "psypallav@gmail.com",
         phone: "9905043045",
         type: "TEACHING",
-        image: "PallavKumar.jpg"
+        image: "/images/faculty/PallavKumar.jpg"
     },
     {
         name: "Dr. Shabbir Ahmad",
@@ -153,7 +153,7 @@ export const facultyData  = [
         email: "shabbir9334907650@gmail.com",
         phone: "9334907650",
         type: "TEACHING",
-        image: "ShabbirAhmad.jpg"
+        image: "/images/faculty/ShabbirAhmad.jpg"
     },
     {
         name: "Dr. Manoj Kumar Yadav",
@@ -162,7 +162,7 @@ export const facultyData  = [
         email: "manphd123@gmail.com",
         phone: "9934658767",
         type: "TEACHING",
-        image: "ManojKumarYadav.jpg"
+        image: "/images/faculty/ManojKumarYadav.jpg"
     },
     {
         name: "Dr. Ali Ahmad Ansari",
@@ -171,7 +171,7 @@ export const facultyData  = [
         email: "aliahmadknet@gmail.com",
         phone: "8340377407",
         type: "TEACHING",
-        image: "AliAhmadAnsari.jpg"
+        image: "/images/faculty/AliAhmadAnsari.jpg"
     },
     {
         name: "Dr. Arnab Maity",
@@ -180,7 +180,7 @@ export const facultyData  = [
         email: "arnab.maity09@gmail.com",
         phone: "7001397134",
         type: "TEACHING",
-        image: "ArnabMaity.jpg"
+        image: "/images/faculty/ArnabMaity.jpg"
     },
 
     // NON TEACHING STAFF
@@ -191,7 +191,7 @@ export const facultyData  = [
         email: "",
         phone: "",
         type: "NON-TEACHING",
-        image: ""
+        image: "/images/demouser.jpg"
     },
     {
         name: "Laxman Kumar Yadav",
@@ -200,7 +200,7 @@ export const facultyData  = [
         email: "",
         phone: "",
         type: "NON-TEACHING",
-        image: ""
+        image: "/images/demouser.jpg"
     },
     {
         name: "Sri Shashibhusan Kumar",
@@ -209,7 +209,7 @@ export const facultyData  = [
         email: "",
         phone: "",
         type: "NON-TEACHING",
-        image: ""
+        image: "/images/demouser.jpg"
     },
     {
         name: "Sri Akhilesh Kumar Mandal",
@@ -218,7 +218,7 @@ export const facultyData  = [
         email: "",
         phone: "",
         type: "NON-TEACHING",
-        image: ""
+        image: "/images/demouser.jpg"
     },
     {
         name: "Sri Amarjeet Kumar",
@@ -227,6 +227,6 @@ export const facultyData  = [
         email: "",
         phone: "",
         type: "NON-TEACHING",
-        image: ""
+        image: "/images/demouser.jpg"
     },
 ]
