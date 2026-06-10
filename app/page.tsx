@@ -1,8 +1,10 @@
 'use client'
 import CollegeIntro from "@/components/collegeIntro";
 import Enterence from "@/components/enterence"
+import { FacultyMarquee } from "@/components/facultyMarquee";
 import { ImportantLinks } from "@/components/importantLinks";
 import { Mentors } from "@/components/mentors";
+import { NonTeachingStaff } from "@/components/nonTeachingStaff";
 import Updates from "@/components/updates";
 
 
@@ -17,6 +19,8 @@ export default function Home() {
       <Updates />
       <ImportantLinks />
       <Mentors />
+      <FacultyMarquee />
+      <NonTeachingStaff />
     </div>
   );
 }

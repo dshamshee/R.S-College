@@ -90,7 +90,7 @@ export const facultyData  = [
         email: "abhi18797shek@gmail.com",
         phone: "8709105801",
         type: "TEACHING",
-        image: "/images/faculty/Abhishekkumar.jpg"
+        image: "/images/demouser.jpg"
     },
     {
         name: "Dr. Manoj Kumar Pandey",
