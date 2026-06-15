@@ -14,8 +14,8 @@ export const Mentors = () => {
       designation: "Hon'ble Chief Minister, Bihar"
     },
     {
-      name: "Sanjay Kumar",
-      image: "/images/demouser.jpg",
+      name: "Prof. (Dr.) Shekhar Kumar Jaiswal",
+      image: "/images/principal.jpeg",
       designation: "Principal"
     },
     // {
@@ -38,27 +38,27 @@ export const Mentors = () => {
       </div>
 
       {/* Grid: 1 col on mobile, 2 on tablet, 4 on desktop */}
-      <div className="mentorsGrid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-7xl">
+      <div className="mentorsGrid grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl justify-items-center">
         {mentors.map((mentor, index) => (
           <Card 
-            className="mentorCard group w-[400px] h-[400px] overflow-hidden rounded-2xl border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-white" 
+            className="mentorCard group w-full max-w-sm h-auto pb-6 overflow-hidden rounded-2xl border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-white flex flex-col" 
             key={index}
           >
             {/* Aspect ratio wrapper prevents layout shift */}
-            <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
+            <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-50 border-b border-slate-100">
               <Image 
                 src={mentor.image} 
                 alt={mentor.name} 
                 fill
-                className="object-contain group-hover:scale-105 transition-transform duration-500" 
+                className="object-contain p-2 group-hover:scale-102 transition-transform duration-500" 
               />
             </div>
             
-            <div className="flex flex-col items-center justify-center">
+            <div className="flex flex-col items-center justify-center p-4 pt-6 flex-grow">
               <h2 className="text-center text-lg font-bold text-slate-800 leading-tight">
                 {mentor.name}
               </h2>
-              <p className="text-center text-xs font-semibold text-blue-600 uppercase tracking-widest mt-2">
+              <p className="text-center text-xs font-semibold text-blue-600 uppercase tracking-wider mt-3 px-2">
                 {mentor.designation}
               </p>
             </div>

@@ -13,9 +13,12 @@ export const NavHeader = () => {
         {/* Left Section: Logo and College Name */}
         <div className="left flex items-center gap-3 md:gap-4 w-full lg:w-auto">
           <div className="logo relative shrink-0 w-16 h-16 md:w-20 md:h-20">
-            <div className="w-full h-full rounded-full border border-gray-200 flex items-center justify-center bg-slate-50 shadow-sm">
-              <span className="text-[10px] text-gray-400">LOGO</span>
-            </div>
+            <Image
+              src="/images/logo.jpg"
+              alt="Ramdeo Sharda College Logo"
+              fill
+              className="object-cover rounded-full"
+            />
           </div>
           <div className="txt flex flex-col">
             <h1 className="text-base md:text-xl font-bold text-[#1a237e] leading-tight">
@@ -63,12 +66,12 @@ export const NavHeader = () => {
               </div>
             </div>
             
-            <Button 
+            {/* <Button 
               size={'sm'} 
               className="bg-[#002b5b] hover:bg-[#002b5b]/90 text-white font-bold px-5 py-5 lg:py-2 rounded-md shadow-md text-xs lg:text-sm cursor-pointer transition-all active:scale-95 w-full sm:w-auto"
             >
               Online Admission
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
