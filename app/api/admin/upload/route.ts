@@ -34,17 +34,39 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
             }, { status: 400 });
         }
 
+        // Validate file size (max 1MB)
+        const MAX_FILE_SIZE = 1024 * 1024;
+        if (file.size > MAX_FILE_SIZE) {
+            return NextResponse.json({
+                success: false,
+                message: "File size exceeds the 1MB limit. Please upload a file smaller than 1MB.",
+            }, { status: 400 });
+        }
+
         // 3. Convert file to buffer
         const bytes = await file.arrayBuffer();
         const buffer = Buffer.from(bytes);
 
+        // Configure upload options
+        const isImage = file.type.startsWith("image/");
+        const uploadOptions: any = {
+            resource_type: "auto", // Automatically detects images, PDFs, etc.
+            folder: "rs_college_updates",
+        };
+
+        if (isImage) {
+            // Apply Cloudinary's built-in transformations to resize and compress image to ~200kb
+            uploadOptions.transformation = [
+                { width: 1200, height: 1200, crop: "limit" },
+                { quality: "auto:eco" },
+                { fetch_format: "auto" }
+            ];
+        }
+
         // 4. Upload stream to Cloudinary
         const uploadResult = await new Promise<any>((resolve, reject) => {
             cloudinary.uploader.upload_stream(
-                {
-                    resource_type: "auto", // Automatically detects images, PDFs, etc.
-                    folder: "rs_college_updates",
-                },
+                uploadOptions,
                 (error, result) => {
                     if (error) {
                         console.error("Cloudinary error:", error);

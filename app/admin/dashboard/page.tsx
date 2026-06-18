@@ -65,6 +65,16 @@ export default function AdminDashboardPage() {
         const file = e.target.files?.[0];
         if (!file) return;
 
+        // Limit file size to 1MB (1,048,576 bytes)
+        const MAX_FILE_SIZE = 1024 * 1024;
+        if (file.size > MAX_FILE_SIZE) {
+            alert("File size exceeds the 1MB limit. Please upload a file smaller than 1MB.");
+            showNotification("error", "File size exceeds the 1MB limit. Please upload a file smaller than 1MB.");
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            e.target.value = ""; // Reset file input
+            return;
+        }
+
         setUploading(true);
         const formData = new FormData();
         formData.append("file", file);
@@ -362,7 +372,7 @@ export default function AdminDashboardPage() {
                                                 <>
                                                     <Upload size={24} className="text-slate-400" />
                                                     <span className="text-xs font-semibold">Click to select attachment</span>
-                                                    <span className="text-[10px] text-slate-400">PDF, PNG, JPG up to 10MB</span>
+                                                    <span className="text-[10px] text-slate-400">PDF, PNG, JPG up to 1MB</span>
                                                 </>
                                             )}
                                         </div>
