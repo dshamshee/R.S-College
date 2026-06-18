@@ -2,8 +2,6 @@ import { CustomLayout } from "@/components/customeLayout";
 import { 
   ClipboardList, 
   CheckCircle, 
-  Calendar, 
-  ArrowRight, 
   FileText, 
   CreditCard 
 } from "lucide-react";
@@ -103,36 +101,16 @@ export default function Admissions() {
             </div>
           </div>
 
-          {/* Right: Important Dates & Sidebar */}
+          {/* Right: Sidebar */}
           <div className="space-y-8">
-            <div className="bg-blue-900 text-white p-8 rounded-3xl shadow-xl">
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <Calendar size={20} />
-                Important Dates
-              </h3>
-              <div className="space-y-6">
-                <div className="border-l-2 border-blue-400 pl-4">
-                  <p className="text-[10px] uppercase font-bold text-blue-300">Start Date</p>
-                  <p className="text-sm font-medium">15th May, 2026</p>
-                </div>
-                <div className="border-l-2 border-blue-400 pl-4">
-                  <p className="text-[10px] uppercase font-bold text-blue-300">Last Date to Apply</p>
-                  <p className="text-sm font-medium">10th June, 2026</p>
-                </div>
-                <div className="border-l-2 border-blue-400 pl-4">
-                  <p className="text-[10px] uppercase font-bold text-blue-300">First Merit List</p>
-                  <p className="text-sm font-medium">15th June, 2026</p>
-                </div>
-              </div>
-              <button className="w-full mt-8 bg-white text-blue-900 py-3 rounded-xl font-bold hover:bg-blue-50 transition-all flex items-center justify-center gap-2">
-                Apply Now <ArrowRight size={18} />
-              </button>
-            </div>
-
-            <div className="p-6 border border-slate-100 rounded-2xl bg-slate-50/50">
-              <h4 className="font-bold text-blue-900 mb-2 text-sm">Need Help?</h4>
-              <p className="text-xs text-slate-500 mb-4">Contact our admission helpdesk for any queries related to forms or payments.</p>
-              <p className="text-sm font-bold text-slate-800">+91-XXXXX XXXXX</p>
+            <div className="p-8 border border-slate-100 rounded-[2rem] bg-slate-50/50 shadow-sm">
+              <h4 className="font-bold text-blue-900 mb-3 text-lg">Need Help?</h4>
+              <p className="text-sm text-slate-500 mb-6 leading-relaxed">
+                Contact our admission helpdesk for any queries related to forms, documents, eligibility, or online payments.
+              </p>
+              <p className="text-base font-bold text-slate-800 flex items-center gap-2">
+                Phone: +91 6201798093
+              </p>
             </div>
           </div>
 

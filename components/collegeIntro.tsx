@@ -45,7 +45,7 @@ export default function CollegeIntro() {
           {/* Mission & Vision Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
             {/* Mission Card */}
-            <div className="group p-6 bg-gradient-to-br from-blue-900 to-[#002b5b] text-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div id="mission" className="group p-6 bg-gradient-to-br from-blue-900 to-[#002b5b] text-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center mb-4 text-blue-300 group-hover:scale-110 transition-transform">
                 <Target className="w-6 h-6" />
               </div>
@@ -56,7 +56,7 @@ export default function CollegeIntro() {
             </div>
 
             {/* Vision Card */}
-            <div className="group p-6 bg-card border border-border/80 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+            <div id="vision" className="group p-6 bg-card border border-border/80 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
               <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center mb-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
                 <Eye className="w-6 h-6" />
               </div>
@@ -69,7 +69,7 @@ export default function CollegeIntro() {
         </div>
 
         {/* Right Column: Why Choose Us */}
-        <div className="lg:col-span-5 bg-slate-50 dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800/80 rounded-3xl p-6 md:p-8 shadow-sm">
+        <div id="objective" className="lg:col-span-5 bg-slate-50 dark:bg-slate-900/40 border border-slate-100 dark:border-slate-800/80 rounded-3xl p-6 md:p-8 shadow-sm">
           <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-200/60 dark:border-slate-800">
             <GraduationCap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
             <h3 className="text-xl font-bold text-[#002b5b] dark:text-blue-400">

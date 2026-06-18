@@ -1,0 +1,3 @@
+1. Remove the important dates from the /academic/admission 
+2. add the phone number on academic/admission need help section
+3. correct the faculties name on /academic/faculties page  

@@ -138,7 +138,7 @@ export default function Navbar() {
 
                 {/* Logo */}
                 <h1 className="text-lg font-bold tracking-wide">
-                    R.S College
+                    R.D.S College
                 </h1>
 
                 {/* Mobile Menu */}

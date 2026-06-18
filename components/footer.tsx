@@ -5,24 +5,40 @@ export const Footer = () => {
   const footerSections = [
     {
       title: "Quick Links",
-      links: ["NAAC & Accredition", "Tenders", "Alumni", "Departments", "Student Zone", "Exam & Results"],
+      links: [
+        { label: "NAAC & Accredition", href: "https://www.naac.gov.in" },
+        { label: "Tenders", href: "#" },
+        { label: "Alumni", href: "#" },
+        { label: "Departments", href: "/academics/departments" },
+        { label: "Student Zone", href: "/student/time-table" },
+        { label: "Exam & Results", href: "/student/results" },
+      ],
     },
     {
       title: "Others Links",
-      links: ["Mission", "Vision", "Objective", "Downloads", "Prospectus", "Contact Us"],
+      links: [
+        { label: "Mission", href: "/#mission" },
+        { label: "Vision", href: "/#vision" },
+        { label: "Objective", href: "/#objective" },
+        { label: "Downloads", href: "#" },
+        { label: "Prospectus", href: "/images/rds.pdf" },
+        { label: "Contact Us", href: "/contact" },
+      ],
     },
     {
       title: "Important Links",
       links: [
-        `${process.env.UNIVERSITY_NAME?.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}
-         (${process.env.UNIVERSITY_DISTRICT!.charAt(0).toUpperCase() + process.env.UNIVERSITY_DISTRICT!.slice(1).toLowerCase()})`,
-        "RTI",
-        "UGC",
-        "AICTE",
-        "NAAC",
-        "Anti-Ragging Act",
-        "National Portal of India",
-        "Government of Bihar",
+        {
+          label: `${process.env.UNIVERSITY_NAME?.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')} (${process.env.UNIVERSITY_DISTRICT!.charAt(0).toUpperCase() + process.env.UNIVERSITY_DISTRICT!.slice(1).toLowerCase()})`,
+          href: "https://purneauniversity.ac.in",
+        },
+        { label: "RTI", href: "https://rtionline.gov.in" },
+        { label: "UGC", href: "https://www.ugc.gov.in" },
+        { label: "AICTE", href: "https://www.aicte-india.org" },
+        { label: "NAAC", href: "https://www.naac.gov.in" },
+        { label: "Anti-Ragging Act", href: "https://www.antiragging.in" },
+        { label: "National Portal of India", href: "https://www.india.gov.in" },
+        { label: "Government of Bihar", href: "https://state.bihar.gov.in" },
       ],
     },
   ];
@@ -41,8 +57,12 @@ export const Footer = () => {
               <ul className="flex flex-col gap-2">
                 {section.links.map((link, i) => (
                   <li key={i} className="border-b border-blue-400/10 pb-1 last:border-0">
-                    <Link href="#" className="text-sm text-gray-300 hover:text-white transition-colors">
-                      {link}
+                    <Link 
+                      href={link.href} 
+                      className="text-sm text-gray-300 hover:text-white transition-colors"
+                      {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
+                      {link.label}
                     </Link>
                   </li>
                 ))}

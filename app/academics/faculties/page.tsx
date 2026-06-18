@@ -32,7 +32,7 @@ export default function Faculties() {
   return (
     <CustomLayout>
       <div className="max-w-7xl mx-auto py-16 px-6 md:px-16">
-        
+
         {/* Title Section */}
         <div className="max-w-3xl mb-16">
           <h1 className="text-4xl font-bold text-blue-900 mb-6">Our Academic Faculties</h1>
@@ -44,32 +44,32 @@ export default function Faculties() {
         {/* Faculties Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {facultyData.map((faculty, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`group flex flex-col bg-white border-t-4 ${faculty.color} rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300`}
             >
               {/* Main Content Wrapper */}
               <div className="flex-grow flex flex-col items-start">
-                
+
                 <h3 className="text-2xl font-bold text-blue-900 mb-4">
                   {faculty.name}
                 </h3>
-                
+
                 <p className="text-slate-500 text-sm mb-8 leading-relaxed">
                   {faculty.description}
                 </p>
 
                 {/* Pillars List */}
                 <div className="w-full mt-auto mb-8">
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Academic Focus</p>
-                    <ul className="space-y-3">
-                        {faculty.pillars.map((pillar, pIdx) => (
-                            <li key={pIdx} className="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                                <CheckCircle2 size={16} className="text-blue-500 shrink-0" />
-                                {pillar}
-                            </li>
-                        ))}
-                    </ul>
+                  <p className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Academic Focus</p>
+                  <ul className="space-y-3">
+                    {faculty.pillars.map((pillar, pIdx) => (
+                      <li key={pIdx} className="flex items-center gap-3 text-sm text-slate-700 font-medium">
+                        <CheckCircle2 size={16} className="text-blue-500 shrink-0" />
+                        {pillar}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
 
@@ -91,11 +91,11 @@ export default function Faculties() {
 
         {/* Bottom Section - Message from Administration */}
         <div className="mt-20 p-10 bg-slate-50 rounded-2xl border border-slate-100 text-center">
-            <h2 className="text-2xl font-bold text-blue-900 mb-2">Academic Excellence</h2>
-            <p className="text-slate-500 text-sm max-w-xl mx-auto">
-                Every faculty at Ramdev Sharda College is dedicated to providing an environment that 
-                encourages intellectual curiosity and professional growth.
-            </p>
+          <h2 className="text-2xl font-bold text-blue-900 mb-2">Academic Excellence</h2>
+          <p className="text-slate-500 text-sm max-w-xl mx-auto">
+            Every faculty at Ramdev Sharda College is dedicated to providing an environment that
+            encourages intellectual curiosity and professional growth.
+          </p>
         </div>
       </div>
     </CustomLayout>

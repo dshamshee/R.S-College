@@ -14,15 +14,15 @@ export const Mentors = () => {
       designation: "Hon'ble Chief Minister, Bihar"
     },
     {
+      name: "Prof. (Dr.) Vivekanand Singh",
+      image: "/images/vc.jpeg",
+      designation: "VC of Purnea University"
+    },
+    {
       name: "Prof. (Dr.) Shekhar Kumar Jaiswal",
       image: "/images/principal.jpeg",
       designation: "Principal"
-    },
-    // {
-    //   name: "Rajesh Kumar",
-    //   image: "/images/anant.png",
-    //   designation: "Professor"
-    // }
+    }
   ]
 
   return (
@@ -38,7 +38,7 @@ export const Mentors = () => {
       </div>
 
       {/* Grid: 1 col on mobile, 2 on tablet, 4 on desktop */}
-      <div className="mentorsGrid grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-7xl justify-items-center">
+      <div className="mentorsGrid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl justify-items-center">
         {mentors.map((mentor, index) => (
           <Card 
             className="mentorCard group w-full max-w-sm h-auto pb-6 overflow-hidden rounded-2xl border-none shadow-sm hover:shadow-xl transition-all duration-300 bg-white flex flex-col" 

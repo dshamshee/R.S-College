@@ -150,7 +150,7 @@ export default function PhotoGallery() {
           <div className="p-4 bg-slate-50 border border-slate-100 rounded-2xl flex items-center gap-4 max-w-md">
             <ImageIcon className="text-blue-400" size={24} />
             <p className="text-[11px] text-slate-500 leading-relaxed">
-              Images shown are property of R.S. College. Unauthorized reproduction 
+              Images shown are property of R.D.S. College. Unauthorized reproduction 
               of media files is strictly prohibited under institutional guidelines.
             </p>
           </div>

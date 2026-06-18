@@ -1,9 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { Phone, Mail, Menu } from "lucide-react"; // Added Menu for potential mobile drawer
-import { Button } from "@/components/ui/button";
-import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { Phone, Mail } from "lucide-react";
 
 export const NavHeader = () => {
   return (
@@ -33,26 +29,8 @@ export const NavHeader = () => {
           </div>
         </div>
 
-        {/* Right Section: Hidden on very small screens or rearranged */}
+        {/* Right Section: Contact Info */}
         <div className="right flex flex-col items-center lg:items-end gap-3 w-full lg:w-auto">
-          
-          {/* Top Row: Utility Links & Socials - Hidden on Mobile, Visible on LG */}
-          <div className="hidden lg:flex items-center gap-6 text-[13px] text-slate-600 font-medium">
-            <div className="flex gap-4">
-               <Link href="#" className="hover:text-blue-700 transition-colors">Admission Portal</Link>
-               <Link href="#" className="hover:text-blue-700 transition-colors">Gallery</Link>
-               <Link href="#" className="hover:text-blue-700 transition-colors">Location</Link>
-            </div>
-            
-            <div className="flex items-center gap-3 border-l pl-4 border-gray-200 text-slate-500">
-              <FaFacebook size={16} className="cursor-pointer hover:text-blue-600 transition-colors" />
-              <FaXTwitter size={16} className="cursor-pointer hover:text-black transition-colors" />
-              <FaInstagram size={16} className="cursor-pointer hover:text-pink-600 transition-colors" />
-              <FaLinkedin size={16} className="cursor-pointer hover:text-blue-700 transition-colors" />
-            </div>
-          </div>
-
-          {/* Bottom Row: Contact Info and Action Button */}
           <div className="flex flex-wrap items-center justify-center lg:justify-end gap-4 md:gap-6 w-full">
             {/* Contact Info: Stacked on mobile, side-by-side on desktop */}
             <div className="flex flex-row lg:flex-col items-center lg:items-end gap-x-4 gap-y-0 text-xs md:text-sm font-bold text-slate-800">
@@ -65,13 +43,6 @@ export const NavHeader = () => {
                 <span>{process.env.COLLEGE_EMAIL}</span>
               </div>
             </div>
-            
-            {/* <Button 
-              size={'sm'} 
-              className="bg-[#002b5b] hover:bg-[#002b5b]/90 text-white font-bold px-5 py-5 lg:py-2 rounded-md shadow-md text-xs lg:text-sm cursor-pointer transition-all active:scale-95 w-full sm:w-auto"
-            >
-              Online Admission
-            </Button> */}
           </div>
         </div>
       </div>
