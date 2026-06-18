@@ -1,3 +1,4 @@
-1. Remove the important dates from the /academic/admission 
-2. add the phone number on academic/admission need help section
-3. correct the faculties name on /academic/faculties page  
+Tasks: 
+1. Admin can able to add Notices, Tenders, and Examinations files (images, pdf) (use update.ts file for the schema)
+2. Login for the admin (pre defined admin credentials on the database)
+3. 

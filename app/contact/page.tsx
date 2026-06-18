@@ -2,6 +2,7 @@
 
 import { CustomLayout } from "@/components/customeLayout";
 import { useState } from "react";
+import { collegeDetails } from "@/config/collegeDetails";
 import { 
   Phone, 
   Mail, 
@@ -116,8 +117,8 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-slate-800 dark:text-slate-200 text-base">Campus Address</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
-                    Ramdeo Sharda College,<br />
-                    Salmari, Katihar, Bihar - 854113, India
+                    {collegeDetails.name},<br />
+                    {collegeDetails.address}, {collegeDetails.district}, {collegeDetails.state} - {collegeDetails.pincode}, India
                   </p>
                 </div>
               </div>
@@ -130,7 +131,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-slate-800 dark:text-slate-200 text-base">Phone Number</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-                    +91 6201798093
+                    {collegeDetails.phone}
                   </p>
                 </div>
               </div>
@@ -143,7 +144,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-bold text-slate-800 dark:text-slate-200 text-base">Email Support</h3>
                   <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-                    rdsclg@purnea.ac.in
+                    {collegeDetails.email}
                   </p>
                 </div>
               </div>

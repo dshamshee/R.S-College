@@ -1,5 +1,7 @@
 import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
+import { collegeDetails } from "@/config/collegeDetails";
+import Link from "next/link";
 
 export const NavHeader = () => {
   return (
@@ -21,29 +23,35 @@ export const NavHeader = () => {
               रामदेव शारदा कॉलेज, सालमरी, कटिहार
             </h1>
             <h1 className="text-sm md:text-lg font-bold text-[#1a237e] leading-tight uppercase tracking-tight">
-              {process.env.COLLEGE_NAME}, {process.env.COLLEGE_CITY}, {process.env.COLLEGE_DISTRICT}
+              {collegeDetails.name}, {collegeDetails.city}, {collegeDetails.district}
             </h1>
             <p className="text-[10px] md:text-sm text-slate-500 font-medium italic">
-              Affiliated to {process.env.UNIVERSITY_NAME}, {process.env.UNIVERSITY_DISTRICT}
+              A Constituent Unit of {collegeDetails.university}, {collegeDetails.universityDistrict}
             </p>
           </div>
         </div>
-
-        {/* Right Section: Contact Info */}
-        <div className="right flex flex-col items-center lg:items-end gap-3 w-full lg:w-auto">
-          <div className="flex flex-wrap items-center justify-center lg:justify-end gap-4 md:gap-6 w-full">
-            {/* Contact Info: Stacked on mobile, side-by-side on desktop */}
-            <div className="flex flex-row lg:flex-col items-center lg:items-end gap-x-4 gap-y-0 text-xs md:text-sm font-bold text-slate-800">
-              <div className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-pink-600 fill-pink-600" />
-                <span className="whitespace-nowrap">+91-{process.env.COLLEGE_PHONE}</span>
-              </div>
-              <div className="hidden sm:flex items-center gap-1.5 font-semibold text-slate-600 text-[10px] md:text-xs">
-                <Mail className="w-3.5 h-3.5" />
-                <span>{process.env.COLLEGE_EMAIL}</span>
-              </div>
+        
+        {/* Right Section: Contact Info & Department Login */}
+        <div className="right flex flex-col items-center lg:items-end justify-center gap-1.5 w-full lg:w-auto">
+          {/* Contact Info: Stacked on mobile, side-by-side on desktop */}
+          <div className="flex flex-row lg:flex-col items-center lg:items-end gap-x-4 gap-y-0.5 text-xs md:text-sm font-bold text-slate-800">
+            <div className="flex items-center gap-1.5">
+              <Phone className="w-3.5 h-3.5 text-pink-600 fill-pink-600" />
+              <span className="whitespace-nowrap">{collegeDetails.phone}</span>
+            </div>
+            <div className="hidden sm:flex items-center gap-1.5 font-semibold text-slate-600 text-[10px] md:text-xs">
+              <Mail className="w-3.5 h-3.5" />
+              <span>{collegeDetails.email}</span>
             </div>
           </div>
+          
+          {/* Department Login Link */}
+          <Link
+            href="/admin/login"
+            className="text-[10px] md:text-xs text-[#1a237e] hover:text-blue-900 hover:underline transition-all font-bold cursor-pointer whitespace-nowrap"
+          >
+            Department Login &rarr;
+          </Link>
         </div>
       </div>
     </div>

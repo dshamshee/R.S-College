@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { NavHeader } from "@/components/navHeader";
+import { collegeDetails } from "@/config/collegeDetails";
 
 const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
 
@@ -22,8 +23,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ramdeo Sharda College | Salmari, Katihar",
-  description: "Official website of Ramdeo Sharda College, Salmari, Katihar. Affiliated to Purnea University. Nurturing talent, inspiring innovation, and shaping future leaders.",
+  title: `${collegeDetails.name} | ${collegeDetails.city}, ${collegeDetails.district}`,
+  description: `Official website of ${collegeDetails.name}, ${collegeDetails.city}. Affiliated to ${collegeDetails.university}. Nurturing talent, inspiring innovation, and shaping future leaders.`,
 };
 
 export default function RootLayout({
