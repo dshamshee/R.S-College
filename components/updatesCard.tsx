@@ -19,6 +19,7 @@ export const UpdatesCard = ({ updates, borderColor }: { updates: UpdatesType[], 
     `;
 
     const hasUpdates = updates && updates.length > 0;
+    const shouldScroll = updates && updates.length > 3;
 
     return (
         <>
@@ -30,8 +31,8 @@ export const UpdatesCard = ({ updates, borderColor }: { updates: UpdatesType[], 
                             <span className="text-sm text-slate-400 font-medium">No announcements published yet.</span>
                         </div>
                     ) : (
-                        <div className="flex flex-col px-5 animate-[scrollUp_50s_linear_infinite] group-hover:[animation-play-state:paused]">
-                            {[...updates, ...updates].map((update, index) => (
+                        <div className={`flex flex-col px-5 ${shouldScroll ? 'animate-[scrollUp_50s_linear_infinite] group-hover:[animation-play-state:paused]' : ''}`}>
+                            {(shouldScroll ? [...updates, ...updates] : updates).map((update, index) => (
                                 <CardHeader key={`${update._id}-${index}`} className="px-0 py-3 border-b border-border/40 last:border-0">
                                     <CardTitle>
                                         <Link
@@ -52,7 +53,7 @@ export const UpdatesCard = ({ updates, borderColor }: { updates: UpdatesType[], 
                     )}
                 </div>
 
-                {hasUpdates && (
+                {hasUpdates && shouldScroll && (
                     <>
                         {/* Glassmorphism gradient overlays to hide the 'pop' at the edges */}
                         <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-background via-background/80 to-transparent pointer-events-none z-10" />
