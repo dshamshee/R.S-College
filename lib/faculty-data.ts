@@ -9,7 +9,7 @@ export const facultyData  = [
         email: "samdariapankaj74@gmail.com",
         phone: "",
         type: "TEACHING",
-        image: "/images/demouser.jpg"
+        image: "/images/faculty/PankajSamdaria.jpg"
     },
     {
         name: "Dr. Manoj Kumar",
@@ -18,14 +18,14 @@ export const facultyData  = [
         email: "",
         phone: "7909006243",
         type: "TEACHING",
-        image: "/images/demouser.jpg"
+        image: "/images/faculty/ManojKumar.jpg"
     },
     {
         name: "Dr. Shashikant Kumar Priyadarshi",
         designation: "Assistant Professor (Guest Faculty)",
         department: "Political Science",
-        email: "",
-        phone: "",  
+        email: "drshashikant21@gmail.com",
+        phone: "9608467077",  
         type: "TEACHING",
         image: "/images/faculty/ShashikantKumarPriyadarshi.jpg"
     },
@@ -33,8 +33,8 @@ export const facultyData  = [
         name: "DR. MANDEEP KUMAR",
         designation: "ASSISTANT PROFESSOR (GUEST FACULTY)",
         department: "PSYCHOLOGY",
-        email: "",
-        phone: "",
+        email: "researchinvestigation90@gmail.com",
+        phone: "9122090537",
         type: "TEACHING",
         image: "/images/faculty/MandeepKumar.jpg"
     },
@@ -45,7 +45,7 @@ export const facultyData  = [
         email: "kunalbharti075@gmail.com",
         phone: "9534914075",
         type: "TEACHING",
-        image: "/images/demouser.jpg"
+        image: "/images/faculty/KunalBharti.jpg"
     },
     {
         name: "Dr. Abhinav Das",
@@ -90,7 +90,7 @@ export const facultyData  = [
         email: "abhi18797shek@gmail.com",
         phone: "8709105801",
         type: "TEACHING",
-        image: "/images/demouser.jpg"
+        image: "/images/faculty/AbhishekKumar.jpg"
     },
     {
         name: "Dr. Manoj Kumar Pandey",
@@ -126,7 +126,7 @@ export const facultyData  = [
         email: "tikku.janghel@gmail.com",
         phone: "7354181058",
         type: "TEACHING",
-        image: "/images/faculty/TikeshwarPrasadJanghel.jpg"
+        image: "/images/faculty/TikeshwarPrasadJanghel.jpeg"
     },
     {
         name: "Dr. Nawal Kishore Pintu",
@@ -139,7 +139,7 @@ export const facultyData  = [
     },
     {
         name: "Dr. Pallav Kumar",
-        designation: "Assistant Professor (Level 10)",
+        designation: "Assistant Professor",
         department: "Department of Psychology",
         email: "psypallav@gmail.com",
         phone: "9905043045",
@@ -148,7 +148,7 @@ export const facultyData  = [
     },
     {
         name: "Dr. Shabbir Ahmad",
-        designation: "Assistant Professor (Level 10)",
+        designation: "Assistant Professor",
         department: "Department of Urdu",
         email: "shabbir9334907650@gmail.com",
         phone: "9334907650",
@@ -157,7 +157,7 @@ export const facultyData  = [
     },
     {
         name: "Dr. Manoj Kumar Yadav",
-        designation: "Assistant Professor (Level 10)",
+        designation: "Assistant Professor",
         department: "Department of Economics",
         email: "manphd123@gmail.com",
         phone: "9934658767",
@@ -166,7 +166,7 @@ export const facultyData  = [
     },
     {
         name: "Dr. Ali Ahmad Ansari",
-        designation: "Assistant Professor (Level 10)",
+        designation: "Assistant Professor",
         department: "Department of Physics",
         email: "aliahmadknet@gmail.com",
         phone: "8340377407",
@@ -175,13 +175,17 @@ export const facultyData  = [
     },
     {
         name: "Dr. Arnab Maity",
-        designation: "Assistant Professor (Level 10)",
+        designation: "Assistant Professor",
         department: "Department of Chemistry",
         email: "arnab.maity09@gmail.com",
         phone: "7001397134",
         type: "TEACHING",
         image: "/images/faculty/ArnabMaity.jpg"
     },
+ 
+ 
+
+
 
     // NON TEACHING STAFF
     {
