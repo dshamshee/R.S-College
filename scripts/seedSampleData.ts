@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import UpdatesModel from "../models/updates";
+import HolidayModel from "../models/holiday";
 
 // Bun automatically loads the .env file, so process.env.MONGODB_URI is accessible
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/rs-college";
@@ -64,6 +65,18 @@ const sampleUpdates = [
     }
 ];
 
+const sampleHolidays = [
+    { date: new Date("2026-01-26"), occasion: "Republic Day", type: "Gazetted" },
+    { date: new Date("2026-02-26"), occasion: "Maha Shivaratri", type: "Gazetted" },
+    { date: new Date("2026-03-14"), occasion: "Holi", type: "Gazetted" },
+    { date: new Date("2026-03-31"), occasion: "Id-ul-Fitr", type: "Gazetted" },
+    { date: new Date("2026-04-10"), occasion: "Good Friday", type: "Local" },
+    { date: new Date("2026-08-15"), occasion: "Independence Day", type: "Gazetted" },
+    { date: new Date("2026-10-02"), occasion: "Gandhi Jayanti", type: "Gazetted" },
+    { date: new Date("2026-10-19"), occasion: "Deepavali", type: "Gazetted" },
+    { date: new Date("2026-11-07"), occasion: "Chhath Puja", type: "Local" }
+];
+
 async function seed() {
     try {
         console.log("Connecting to MongoDB:", MONGODB_URI);
@@ -77,8 +90,18 @@ async function seed() {
 
         // Seed sample updates
         console.log("Seeding sample updates...");
-        const inserted = await UpdatesModel.insertMany(sampleUpdates);
-        console.log(`Successfully seeded ${inserted.length} updates!`);
+        const insertedUpdates = await UpdatesModel.insertMany(sampleUpdates);
+        console.log(`Successfully seeded ${insertedUpdates.length} updates!`);
+
+        // Clear existing holidays
+        console.log("Clearing all existing holidays...");
+        await HolidayModel.deleteMany({});
+        console.log("Cleared holidays collection.");
+
+        // Seed sample holidays
+        console.log("Seeding sample holidays for year 2026...");
+        const insertedHolidays = await HolidayModel.insertMany(sampleHolidays);
+        console.log(`Successfully seeded ${insertedHolidays.length} holidays!`);
 
         process.exit(0);
     } catch (error) {

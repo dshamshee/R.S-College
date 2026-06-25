@@ -98,7 +98,7 @@ export const Footer = () => {
           <p>Copyright © 2009 {collegeDetails.name}, {collegeDetails.district}.</p>
 
           <div className="flex items-center gap-4">
-            <p>Designed by : Vastaman Solutions | Site Admin | Site Visited :</p>
+            <p>Designed by : Vaastman Solutions | Site Admin | Site Visited :</p>
             {/* Visitor Counter Stylized */}
             <div className="flex gap-1 bg-black p-1 rounded">
               {["8", "2", "1", "8", "1", "2"].map((num, i) => (

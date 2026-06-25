@@ -87,14 +87,11 @@ export default async function UpdateDetailPage({ params }: PageProps) {
                                     ? "bg-blue-100/20 text-blue-200 border border-blue-100/30" 
                                     : update.type === "EXAMINATION"
                                     ? "bg-emerald-100/20 text-emerald-200 border border-emerald-100/30"
-                                    : update.type === "TENDER"
-                                    ? "bg-orange-100/20 text-orange-200 border border-orange-100/30"
-                                    : "bg-purple-100/20 text-purple-200 border border-purple-100/30"
+                                    : "bg-orange-100/20 text-orange-200 border border-orange-100/30"
                             }`}>
                                 {update.type === "NOTICE" && <Bell size={12} />}
                                 {update.type === "EXAMINATION" && <FileText size={12} />}
                                 {update.type === "TENDER" && <Landmark size={12} />}
-                                {update.type === "NEWS" && <Megaphone size={12} />}
                                 {update.type}
                             </span>
                         </div>

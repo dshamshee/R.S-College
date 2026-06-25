@@ -12,7 +12,7 @@ const updatesSchema = new Schema({
     },
     type: {
         type: String,
-        enum: ["NOTICE", "EXAMINATION", "NEWS", "TENDER"],
+        enum: ["NOTICE", "EXAMINATION", "TENDER"],
         required: true,
     },
     files: {
