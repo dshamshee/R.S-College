@@ -6,9 +6,9 @@ const departmentData = [
   {
     faculty: "Faculty of Science",
     departments: [
-      { name: "Physics", head: "Dr. A.K. Sharma", code: "PHY" },
-      { name: "Chemistry", head: "Prof. S. Prasad", code: "CHE" },
-      { name: "Mathematics", head: "Dr. R.N. Das", code: "MAT" },
+      { name: "Physics", head: "Dr. Ali Ahmad Ansari", code: "PHY" },
+      { name: "Chemistry", head: "Dr. Arnab Maity", code: "CHE" },
+      { name: "Mathematics", head: "Dr. Ram Babu Singh", code: "MAT" },
       { name: "Botany", head: "Prof. M. Kumari", code: "BOT" },
       { name: "Zoology", head: "Dr. V.K. Singh", code: "ZOO" },
     ]
@@ -17,11 +17,12 @@ const departmentData = [
     faculty: "Faculty of Humanities & Arts",
     departments: [
       { name: "History", head: "Prof. B.P. Yadav", code: "HIS" },
-      { name: "Political Science", head: "Dr. S.N. Mishra", code: "POL" },
+      { name: "Political Science", head: "Shashikant Priyadarshi", code: "POL" },
       { name: "Economics", head: "Prof. J.K. Jha", code: "ECO" },
-      { name: "Hindi", head: "Dr. P.K. Singh", code: "HIN" },
-      { name: "English", head: "Prof. R.S. Roy", code: "ENG" },
-      { name: "Psychology", head: "Dr. D.K. Mahto", code: "PSY" },
+      { name: "Hindi", head: "Kunal Bharti", code: "HIN" },
+      { name: "English", head: "Abhishek Kumar", code: "ENG" },
+      { name: "Psychology", head: "Dr. Abhinav Das, Dr. Mandeep Kumar and Dr. Sunny Kumar", code: "PSY" },
+      { name: "Urdu", head: "Shabbir Ahmad", code: "URDU" },
     ]
   }
 ];
@@ -66,7 +67,7 @@ export default function Departments() {
                         <h3 className="font-bold text-slate-800 group-hover:text-blue-900 transition-colors">
                           Department of {dept.name}
                         </h3>
-                        <p className="text-xs text-slate-400 font-medium">HOD: {dept.head}</p>
+                        <p className="text-xs text-slate-400 font-medium">{dept.head}</p>
                       </div>
                     </div>
                     <ChevronRight size={18} className="text-slate-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />

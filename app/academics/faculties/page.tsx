@@ -4,7 +4,7 @@ import { UserCheck, CheckCircle2 } from "lucide-react";
 const facultyData = [
   {
     name: "Faculty of Science",
-    head: "Dr. Arvind Kumar Sharma",
+    head: "Dr. Ali Ahmad Ansari",
     designation: "Dean of Science",
     color: "border-blue-600",
     description: "Dedicated to advancing scientific knowledge through rigorous academic programs in Physics, Chemistry, and Biological Sciences.",
@@ -12,7 +12,7 @@ const facultyData = [
   },
   {
     name: "Faculty of Humanities & Arts",
-    head: "Prof. Brajesh Prasad Yadav",
+    head: "Dr. Mandeep Kumar",
     designation: "Dean of Arts",
     color: "border-emerald-600",
     description: "Focusing on the study of human culture, history, and social structures to develop critical thinking and societal awareness.",
@@ -20,7 +20,7 @@ const facultyData = [
   },
   {
     name: "Faculty of Social Sciences",
-    head: "Dr. S.N. Mishra",
+    head: "Dr. Manoj Kumar Yadav",
     designation: "Dean of Social Sciences",
     color: "border-orange-600",
     description: "Exploring the complexities of human behavior, political systems, and economic theories in a globalized world.",
@@ -80,9 +80,9 @@ export default function Faculties() {
                 </div>
                 <div className="overflow-hidden">
                   <h4 className="font-bold text-slate-800 text-sm truncate">{faculty.head}</h4>
-                  <p className="text-[10px] text-blue-600 font-bold uppercase tracking-wider">
+                  {/* <p className="text-[10px] text-blue-600 font-bold uppercase tracking-wider">
                     {faculty.designation}
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
