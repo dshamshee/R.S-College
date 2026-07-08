@@ -14,42 +14,42 @@ import { BsYoutube } from "react-icons/bs";
 
 // Demo Data for Videos
 const videoData = [
-  {
-    id: "1",
-    title: "Annual Day Celebrations 2025",
-    thumbnail: "https://images.unsplash.com/photo-1514525253361-bee8a4874093?auto=format&fit=crop&q=80",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual YouTube embed URL
-    category: "Events",
-    duration: "12:45",
-    date: "Feb 15, 2025"
-  },
-  {
-    id: "2",
-    title: "A Glimpse of our Science Laboratories",
-    thumbnail: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    category: "Campus Tour",
-    duration: "05:20",
-    date: "Jan 10, 2025"
-  },
-  {
-    id: "3",
-    title: "National Seminar on Digital India",
-    thumbnail: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    category: "Academic",
-    duration: "45:00",
-    date: "Dec 05, 2024"
-  },
-  {
-    id: "4",
-    title: "Sports Meet - Inter College Finals",
-    thumbnail: "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80",
-    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    category: "Sports",
-    duration: "08:15",
-    date: "Nov 20, 2024"
-  }
+  // {
+  //   id: "1",
+  //   title: "Annual Day Celebrations 2025",
+  //   thumbnail: "https://images.unsplash.com/photo-1514525253361-bee8a4874093?auto=format&fit=crop&q=80",
+  //   url: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with actual YouTube embed URL
+  //   category: "Events",
+  //   duration: "12:45",
+  //   date: "Feb 15, 2025"
+  // },
+  // {
+  //   id: "2",
+  //   title: "A Glimpse of our Science Laboratories",
+  //   thumbnail: "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&q=80",
+  //   url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  //   category: "Campus Tour",
+  //   duration: "05:20",
+  //   date: "Jan 10, 2025"
+  // },
+  // {
+  //   id: "3",
+  //   title: "National Seminar on Digital India",
+  //   thumbnail: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80",
+  //   url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  //   category: "Academic",
+  //   duration: "45:00",
+  //   date: "Dec 05, 2024"
+  // },
+  // {
+  //   id: "4",
+  //   title: "Sports Meet - Inter College Finals",
+  //   thumbnail: "https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80",
+  //   url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  //   category: "Sports",
+  //   duration: "08:15",
+  //   date: "Nov 20, 2024"
+  // }
 ];
 
 export default function VideoGallery() {
