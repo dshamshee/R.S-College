@@ -12,8 +12,18 @@ import {
 } from "lucide-react";
 import { BsYoutube } from "react-icons/bs";
 
+interface VideoItem {
+  id: string;
+  title: string;
+  thumbnail: string;
+  url: string;
+  category: string;
+  duration: string;
+  date: string;
+}
+
 // Demo Data for Videos
-const videoData = [
+const videoData: VideoItem[] = [
   // {
   //   id: "1",
   //   title: "Annual Day Celebrations 2025",
@@ -73,7 +83,7 @@ export default function VideoGallery() {
 
         {/* Video Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {videoData.map((video) => (
+          {videoData?.map((video) => (
             <div 
               key={video.id}
               className="group relative flex flex-col bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500"
