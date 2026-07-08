@@ -9,20 +9,22 @@ const departmentData = [
       { name: "Physics", head: "Dr. Ali Ahmad Ansari", code: "PHY" },
       { name: "Chemistry", head: "Dr. Arnab Maity", code: "CHE" },
       { name: "Mathematics", head: "Dr. Ram Babu Singh", code: "MAT" },
-      { name: "Botany", head: "Prof. M. Kumari", code: "BOT" },
-      { name: "Zoology", head: "Dr. V.K. Singh", code: "ZOO" },
+      { name: "Botany", head: "", code: "BOT" },
+      { name: "Zoology", head: "Dr. Suraj Kumar", code: "ZOO" },
     ]
   },
   {
     faculty: "Faculty of Humanities & Arts",
     departments: [
-      { name: "History", head: "Prof. B.P. Yadav", code: "HIS" },
-      { name: "Political Science", head: "Shashikant Priyadarshi", code: "POL" },
-      { name: "Economics", head: "Prof. J.K. Jha", code: "ECO" },
-      { name: "Hindi", head: "Kunal Bharti", code: "HIN" },
-      { name: "English", head: "Abhishek Kumar", code: "ENG" },
-      { name: "Psychology", head: "Dr. Abhinav Das, Dr. Mandeep Kumar and Dr. Sunny Kumar", code: "PSY" },
-      { name: "Urdu", head: "Shabbir Ahmad", code: "URDU" },
+      { name: "History", head: "Dr. Manoj Kumar", code: "HIS" },
+      { name: "Political Science", head: "Mr. Praful Kumar & Dr. Shashikant Priyadarshi", code: "POL" },
+      { name: "Economics", head: "Dr. Manoj Kumar Yadav & Sri Hiralal (Deputed to DS College)", code: "ECO" },
+      { name: "Hindi", head: "Dr. Tikeshwar Prasad Jalghel & Dr. Kunal Bharti", code: "HIN" },
+      { name: "English", head: "Dr. Manoj Kumar Panday & Dr. Abhishek Kumar", code: "ENG" },
+      { name: "Psychology", head: "Dr. Pallav Kumar (Deputed to PG Department, University), Dr. Abhinav Das, Dr. Mandeep Kumar and Dr. Sunny Kumar", code: "PSY" },
+      { name: "Philosophy", head: "Dr. Nawal Kishor Pintu", code: "PHI" },
+      { name: "Urdu", head: "Dr. Shabbir Ahmad", code: "URDU" },
+      { name: "Commerce", head: "Dr. Pnakaj Kumar Samdaria", code: "COM" },
     ]
   }
 ];
