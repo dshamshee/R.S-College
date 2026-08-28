@@ -40,10 +40,11 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider
-        attribute="class"
-        defaultTheme="light"
-        enableSystem
-        disableTransitionOnChange
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          forcedTheme="light"
+          disableTransitionOnChange
         >
           <NavHeader />
           <Navbar />
