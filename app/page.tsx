@@ -11,8 +11,6 @@ import PrincipalBrief from "@/components/principalBrief";
 
 
 export default function Home() {
-
-
   return (
     <div className="mainContainer pb-10">
       <Enterence />
