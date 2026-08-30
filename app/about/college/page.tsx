@@ -76,7 +76,7 @@ export default function AboutCollege() {
   ];
 
   return (
-    <CustomLayout>
+    <CustomLayout headerImage="about-college.jpg">
       <div className="max-w-7xl mx-auto py-12 md:py-20 px-4 md:px-16">
         
         {/* Main Title & Hero Introduction */}

@@ -1,43 +1,34 @@
-"use client";
-
 import { CustomLayout } from "@/components/customeLayout";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import PrintButton from "@/components/PrintButton";
+import dbConnect from "@/config/dbConnection";
+import HolidayModel, { HolidayType } from "@/models/holiday";
+import VacationModel, { VacationType } from "@/models/vacation";
 import { 
   CalendarDays, 
   Palmtree, 
   Moon, 
   Sun, 
   Info, 
-  Download,
-  CalendarCheck,
-  Loader2
+  CalendarCheck
 } from "lucide-react";
 
-export default function Holidays() {
-  const [holidays, setHolidays] = useState<any[]>([]);
-  const [vacations, setVacations] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchHolidays = async () => {
-      try {
-        const response = await axios.get('/api/holidays');
-        if (response.data.success) {
-          const data = response.data.data;
-          if (data) {
-            setHolidays(data.holidays || []);
-            setVacations(data.vacations || []);
-          }
-        }
-      } catch (error) {
-        console.error("Failed to fetch holidays:", error);
-      } finally {
-        setLoading(false);
-      }
+async function getHolidaysAndVacations() {
+  try {
+    await dbConnect();
+    const holidays = await HolidayModel.find().sort({ date: 1 }).lean();
+    const vacations = await VacationModel.find().sort({ startDate: 1 }).lean();
+    return {
+      holidays: JSON.parse(JSON.stringify(holidays)) as HolidayType[],
+      vacations: JSON.parse(JSON.stringify(vacations)) as VacationType[],
     };
-    fetchHolidays();
-  }, []);
+  } catch (error) {
+    console.error("Failed to fetch holidays and vacations:", error);
+    return { holidays: [], vacations: [] };
+  }
+}
+
+export default async function Holidays() {
+  const { holidays, vacations } = await getHolidaysAndVacations();
 
   return (
     <CustomLayout>
@@ -56,19 +47,10 @@ export default function Holidays() {
               <strong> Purnea University</strong> and the State Government.
             </p>
           </div>
-          <button 
-            onClick={() => window.print()}
-            className="flex items-center gap-2 bg-blue-900 text-white px-6 py-3 rounded-xl font-bold text-sm hover:bg-blue-800 transition-all shadow-lg active:scale-95 no-print cursor-pointer"
-          >
-            <Download size={18} /> PDF Calendar
-          </button>
+          <PrintButton />
         </div>
 
-        {loading ? (
-          <div className="flex justify-center items-center py-20">
-            <Loader2 className="animate-spin text-blue-900" size={40} />
-          </div>
-        ) : holidays.length === 0 ? (
+        {holidays.length === 0 ? (
           <div className="text-center py-20 text-slate-400 text-sm bg-white border border-slate-100 rounded-2xl shadow-sm">
             No holidays published in the calendar yet.
           </div>

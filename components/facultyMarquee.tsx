@@ -1,5 +1,3 @@
-'use client'
-
 import Image from "next/image"
 import { facultyData } from "@/lib/faculty-data"
 import { Mail, Phone, BookOpen, GraduationCap } from "lucide-react"

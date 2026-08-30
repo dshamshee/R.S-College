@@ -24,7 +24,7 @@ const courseData = [
 
 export default function Courses() {
   return (
-    <CustomLayout>
+    <CustomLayout headerImage="academics.jpg">
       <div className="max-w-7xl mx-auto py-16 px-6 md:px-16">
         
         {/* Page Header */}

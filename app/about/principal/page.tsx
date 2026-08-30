@@ -74,7 +74,7 @@ export default function Principal() {
   ];
 
   return (
-    <CustomLayout>
+    <CustomLayout headerImage="about-college.jpg">
       <div className="max-w-7xl mx-auto py-12 md:py-20 px-4 md:px-16">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">

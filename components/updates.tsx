@@ -1,45 +1,29 @@
-"use client";
-
 import { UpdatesType } from "@/models/updates";
 import { UpdatesCard } from "./updatesCard";
-import { useState, useEffect, useMemo } from "react";
-import axios from "axios";
-import { Bell, FileText, Landmark, Loader2 } from "lucide-react";
+import { Bell, FileText, Landmark } from "lucide-react";
+import dbConnect from "@/config/dbConnection";
+import UpdatesModel from "@/models/updates";
 
-export default function Updates() {
-  const [updates, setUpdates] = useState<UpdatesType[]>([]);
-  const [loading, setLoading] = useState(true);
+async function getUpdates(): Promise<UpdatesType[]> {
+  try {
+    await dbConnect();
+    const updates = await UpdatesModel.find().lean();
+    // Serialize Mongoose documents to plain objects
+    return JSON.parse(JSON.stringify(updates));
+  } catch (error) {
+    console.error("Failed to fetch updates:", error);
+    return [];
+  }
+}
 
-  useEffect(() => {
-    const fetchUpdates = async () => {
-      try {
-        const response = await axios.get('/api/search/updates');
-        if (response.data.success) {
-          setUpdates(response.data.data);
-        }
-      } catch (error) {
-        console.error("Failed to fetch updates:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchUpdates();
-  }, []);
+export default async function Updates() {
+  const updates = await getUpdates();
 
-  // Use useMemo for filtering to avoid unnecessary re-renders
-  const filtered = useMemo(() => ({
+  const filtered = {
     notice: updates.filter(u => u.type === "NOTICE"),
     examination: updates.filter(u => u.type === "EXAMINATION"),
     tender: updates.filter(u => u.type === "TENDER")
-  }), [updates]);
-
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center py-20">
-        <Loader2 className="animate-spin text-blue-900" size={40} />
-      </div>
-    );
-  }
+  };
 
   return (
     <div className="updatesContainer w-full bg-slate-50 py-10 px-4 md:px-16">

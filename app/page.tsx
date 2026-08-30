@@ -1,4 +1,3 @@
-'use client'
 import CollegeIntro from "@/components/collegeIntro";
 import Enterence from "@/components/enterence"
 import { FacultyMarquee } from "@/components/facultyMarquee";

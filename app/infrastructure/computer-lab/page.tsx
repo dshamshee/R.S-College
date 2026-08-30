@@ -35,7 +35,7 @@ const labSpecs = [
 
 export default function ComputerLab() {
   return (
-    <CustomLayout>
+    <CustomLayout headerImage="infrastructure.jpg">
       <div className="max-w-7xl mx-auto py-16 px-6 md:px-16">
         
         {/* Header Section */}
