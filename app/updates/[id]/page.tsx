@@ -5,6 +5,9 @@ import Link from "next/link";
 import { ArrowLeft, Calendar, FileText, Download, Landmark, Bell, Megaphone } from "lucide-react";
 import { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
+
 interface PageProps {
     params: Promise<{ id: string }>;
 }

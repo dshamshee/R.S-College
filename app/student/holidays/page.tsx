@@ -2,6 +2,9 @@ import { CustomLayout } from "@/components/customeLayout";
 import PrintButton from "@/components/PrintButton";
 import dbConnect from "@/config/dbConnection";
 import HolidayModel, { HolidayType } from "@/models/holiday";
+
+export const dynamic = "force-dynamic";
+
 import VacationModel, { VacationType } from "@/models/vacation";
 import { 
   CalendarDays, 

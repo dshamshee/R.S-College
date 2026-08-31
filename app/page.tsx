@@ -1,5 +1,8 @@
 import CollegeIntro from "@/components/collegeIntro";
 import Enterence from "@/components/enterence"
+
+export const dynamic = "force-dynamic";
+
 import { FacultyMarquee } from "@/components/facultyMarquee";
 import { ImportantLinks } from "@/components/importantLinks";
 import { Mentors } from "@/components/mentors";
