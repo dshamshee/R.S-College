@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { NavHeader } from "@/components/navHeader";
 import { collegeDetails } from "@/config/collegeDetails";
+import { Analytics } from "@vercel/analytics/next";
 
 const playfairDisplayHeading = Playfair_Display({subsets:['latin'],variable:'--font-heading'});
 
@@ -51,6 +52,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </ThemeProvider>
+        <Analytics />
         </body>
     </html>
   );
