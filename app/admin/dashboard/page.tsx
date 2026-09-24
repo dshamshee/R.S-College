@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { 
     Plus, Trash2, Edit2, Upload, LogOut, FileText, 
-    ExternalLink, X, Bell, Landmark, Megaphone, Loader2, Info, GraduationCap, Calendar
+    ExternalLink, X, Bell, Landmark, Megaphone, Loader2, Info, GraduationCap, Calendar, Image as ImageIcon
 } from "lucide-react";
 import axios from "axios";
 import { UpdatesType } from "@/models/updates";
+import FacultyAdmin from "@/components/admin/FacultyAdmin";
+import GalleryAdmin from "@/components/admin/GalleryAdmin";
 
 export default function AdminDashboardPage() {
     const [updates, setUpdates] = useState<UpdatesType[]>([]);
@@ -16,7 +18,7 @@ export default function AdminDashboardPage() {
     const [uploading, setUploading] = useState(false);
     const router = useRouter();
 
-    const [activeTab, setActiveTab] = useState<"updates" | "holidays">("updates");
+    const [activeTab, setActiveTab] = useState<"updates" | "holidays" | "faculties" | "gallery">("updates");
 
     // Holidays state
     const [holidays, setHolidays] = useState<any[]>([]);
@@ -486,6 +488,28 @@ export default function AdminDashboardPage() {
                         <Calendar size={18} />
                         Holiday Calendar
                     </button>
+                    <button
+                        onClick={() => setActiveTab("faculties")}
+                        className={`pb-3 text-sm font-bold border-b-2 px-2 transition-all cursor-pointer flex items-center gap-2 ${
+                            activeTab === "faculties"
+                                ? "border-blue-950 text-blue-950"
+                                : "border-transparent text-slate-400 hover:text-slate-600"
+                        }`}
+                    >
+                        <GraduationCap size={18} />
+                        Faculties Management
+                    </button>
+                    <button
+                        onClick={() => setActiveTab("gallery")}
+                        className={`pb-3 text-sm font-bold border-b-2 px-2 transition-all cursor-pointer flex items-center gap-2 ${
+                            activeTab === "gallery"
+                                ? "border-blue-950 text-blue-950"
+                                : "border-transparent text-slate-400 hover:text-slate-600"
+                        }`}
+                    >
+                        <ImageIcon size={18} />
+                        Media Gallery Upload
+                    </button>
                 </div>
 
                 {activeTab === "updates" ? (
@@ -787,7 +811,7 @@ export default function AdminDashboardPage() {
 
                         </div>
                     </>
-                ) : (
+                ) : activeTab === "holidays" ? (
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 animate-fade-in">
                         {/* Add / Edit Holiday Form Column */}
                         <div className="lg:col-span-1">
@@ -1105,7 +1129,11 @@ export default function AdminDashboardPage() {
                             </div>
                         </div>
                     </div>
-                )}
+                ) : activeTab === "faculties" ? (
+                    <FacultyAdmin showNotification={showNotification} />
+                ) : activeTab === "gallery" ? (
+                    <GalleryAdmin showNotification={showNotification} />
+                ) : null}
 
             </main>
         </div>

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
 import { cookies } from "next/headers";
 import { verifyToken } from "@/lib/auth";
+import sharp from "sharp";
 
 // Configure Cloudinary
 cloudinary.config({
@@ -26,6 +27,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         // 2. Parse FormData
         const formData = await request.formData();
         const file = formData.get("file") as File | null;
+        const targetFolder = (formData.get("folder") as string) || "RDS";
 
         if (!file) {
             return NextResponse.json({
@@ -34,54 +36,67 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
             }, { status: 400 });
         }
 
-        // Validate file size (max 1MB)
-        const MAX_FILE_SIZE = 1024 * 1024;
+        // Max file size: 50MB for videos/files, 15MB for raw images
+        const MAX_FILE_SIZE = 50 * 1024 * 1024;
         if (file.size > MAX_FILE_SIZE) {
             return NextResponse.json({
                 success: false,
-                message: "File size exceeds the 1MB limit. Please upload a file smaller than 1MB.",
+                message: "File size exceeds 50MB limit.",
             }, { status: 400 });
         }
 
         // 3. Convert file to buffer
-        const bytes = await file.arrayBuffer();
-        const buffer = Buffer.from(bytes);
+        const arrayBuffer = await file.arrayBuffer();
+        let buffer: Buffer = Buffer.from(arrayBuffer);
 
-        // Configure upload options
         const isImage = file.type.startsWith("image/");
-        const uploadOptions: any = {
-            resource_type: "auto", // Automatically detects images, PDFs, etc.
-            folder: "rs_college_updates",
-        };
+        const isVideo = file.type.startsWith("video/");
 
+        // 4. Compress image if it is an image using Sharp
         if (isImage) {
-            // Apply Cloudinary's built-in transformations to resize and compress image to ~200kb
-            uploadOptions.transformation = [
-                { width: 1200, height: 1200, crop: "limit" },
-                { quality: "auto:eco" },
-                { fetch_format: "auto" }
-            ];
+            try {
+                // Compress image to WebP/JPEG format with max dimensions 1400px & 80% quality
+                const compressed = await sharp(buffer)
+                    .resize(1400, 1400, {
+                        fit: "inside",
+                        withoutEnlargement: true,
+                    })
+                    .webp({ quality: 80 })
+                    .toBuffer();
+                buffer = Buffer.from(compressed);
+            } catch (sharpError) {
+                console.warn("Sharp compression warning, falling back to original buffer:", sharpError);
+            }
         }
 
-        // 4. Upload stream to Cloudinary
+        // 5. Configure Cloudinary upload options
+        const uploadOptions: any = {
+            folder: targetFolder, // Defaults to "RDS"
+            resource_type: isVideo ? "video" : isImage ? "image" : "auto",
+        };
+
+        // 6. Upload stream to Cloudinary
         const uploadResult = await new Promise<any>((resolve, reject) => {
-            cloudinary.uploader.upload_stream(
+            const uploadStream = cloudinary.uploader.upload_stream(
                 uploadOptions,
                 (error, result) => {
                     if (error) {
-                        console.error("Cloudinary error:", error);
+                        console.error("Cloudinary upload error:", error);
                         reject(error);
                     } else {
                         resolve(result);
                     }
                 }
-            ).end(buffer);
+            );
+            uploadStream.end(buffer);
         });
 
         return NextResponse.json({
             success: true,
             message: "File uploaded successfully to Cloudinary",
             url: uploadResult.secure_url,
+            resource_type: uploadResult.resource_type,
+            folder: targetFolder,
         }, { status: 200 });
 
     } catch (error) {
