@@ -1,6 +1,16 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import SyllabusClient from "@/components/SyllabusClient";
 import { GraduationCap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Syllabus – Download Course Syllabi",
+  description: "Download the latest syllabus for all undergraduate programs at Ramdeo Sharda College – B.Sc (Science), B.A (Arts & Social Science), and B.Com (Commerce). Purnea University-approved curriculum.",
+  openGraph: {
+    title: "Syllabus Downloads – RDS College, Salmari",
+    description: "Course syllabi for Science, Arts, and Commerce streams. Download subject-wise PDFs for the current academic session.",
+  },
+};
 
 const streams = [
   {

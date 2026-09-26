@@ -1,8 +1,18 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import PhotoGalleryClient from "@/components/PhotoGalleryClient";
 import dbConnect from "@/config/dbConnection";
 import GalleryModel from "@/models/galarry";
 import { Camera, Image as ImageIcon } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Photo Gallery",
+  description: "Browse photos of Ramdeo Sharda College campus, academic events, cultural festivals, sports meets, and student life. A visual journey through RDS College, Salmari.",
+  openGraph: {
+    title: "Photo Gallery – Ramdeo Sharda College",
+    description: "A glimpse into the vibrant life at RDS College – campus, events, festivals, and more.",
+  },
+};
 
 export const dynamic = "force-dynamic";
 

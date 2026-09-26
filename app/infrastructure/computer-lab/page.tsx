@@ -1,4 +1,11 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Computer Lab",
+  description: "Modern computer laboratory at Ramdeo Sharda College with high-end workstations, high-speed internet, full-stack development environment, and cybersecurity infrastructure.",
+};
+
 import { 
   Monitor, 
   Cpu, 

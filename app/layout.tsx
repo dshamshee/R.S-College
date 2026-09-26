@@ -22,9 +22,101 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://rdscollegesalmari.ac.in";
+
 export const metadata: Metadata = {
-  title: `${collegeDetails.name} | ${collegeDetails.city}, ${collegeDetails.district}`,
-  description: `Official website of ${collegeDetails.name}, ${collegeDetails.city}. Affiliated to ${collegeDetails.university}. Nurturing talent, inspiring innovation, and shaping future leaders.`,
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${collegeDetails.name} | ${collegeDetails.city}, ${collegeDetails.district}`,
+    template: `%s | ${collegeDetails.shortName} – ${collegeDetails.city}`,
+  },
+  description: `Official website of ${collegeDetails.name}, ${collegeDetails.city}. Affiliated to ${collegeDetails.university}. Offering undergraduate courses in Science, Arts & Commerce. Nurturing talent, inspiring innovation, and shaping future leaders.`,
+  keywords: [
+    collegeDetails.name,
+    collegeDetails.shortName,
+    "RDS College",
+    "Ramdeo Sharda College Salmari",
+    collegeDetails.university,
+    "college in Katihar",
+    "college in Bihar",
+    "B.Sc Katihar",
+    "B.A Katihar",
+    "B.Com Katihar",
+    "undergraduate college Bihar",
+    "Purnea University affiliated college",
+    "admission 2026",
+  ],
+  authors: [{ name: collegeDetails.name }],
+  creator: collegeDetails.name,
+  publisher: collegeDetails.name,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: SITE_URL,
+    siteName: collegeDetails.name,
+    title: `${collegeDetails.name} – Official Website`,
+    description: `Affiliated to ${collegeDetails.university}. Offering B.Sc, B.A & B.Com programs with modern infrastructure, experienced faculty, and holistic student development in ${collegeDetails.city}, ${collegeDetails.district}, ${collegeDetails.state}.`,
+    images: [
+      {
+        url: "/images/Enterence-2.png",
+        width: 1200,
+        height: 630,
+        alt: `${collegeDetails.name} Campus`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${collegeDetails.name} – Official Website`,
+    description: `Affiliated to ${collegeDetails.university}. Offering B.Sc, B.A & B.Com programs in ${collegeDetails.city}, ${collegeDetails.district}.`,
+    images: ["/images/Enterence-2.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+};
+
+// JSON-LD structured data for the college (Organization + EducationalOrganization)
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: collegeDetails.name,
+  alternateName: collegeDetails.shortName,
+  url: SITE_URL,
+  logo: `${SITE_URL}/images/Enterence-2.png`,
+  image: `${SITE_URL}/images/Enterence-2.png`,
+  description: `Official website of ${collegeDetails.name}, affiliated to ${collegeDetails.university}. Offering undergraduate programs in Science, Arts & Commerce.`,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: collegeDetails.address,
+    addressLocality: collegeDetails.city,
+    addressRegion: collegeDetails.state,
+    postalCode: collegeDetails.pincode,
+    addressCountry: "IN",
+  },
+  telephone: collegeDetails.phone,
+  email: collegeDetails.email,
+  parentOrganization: {
+    "@type": "EducationalOrganization",
+    name: collegeDetails.university,
+  },
+  sameAs: [],
 };
 
 export default function RootLayout({
@@ -46,9 +138,14 @@ export default function RootLayout({
           forcedTheme="light"
           disableTransitionOnChange
         >
+          {/* JSON-LD Structured Data for search engines */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
           <NavHeader />
           <Navbar />
-          {children}
+          <main>{children}</main>
           <Footer />
         </ThemeProvider>
         </body>

@@ -1,10 +1,20 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { CustomLayout } from "@/components/customeLayout";
 import dbConnect from "@/config/dbConnection";
 import FacultyModel from "@/models/faculty";
 import { facultyData as staticFacultyData } from "@/lib/faculty-data";
 import { UserCheck, CheckCircle2, BookOpen, Mail, Phone, ArrowRight, GraduationCap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Faculty Members & Academic Staff",
+  description: "Meet the distinguished faculty members of Ramdeo Sharda College, Salmari. View profiles, qualifications, and contact details of our teaching staff across Science, Arts, and Commerce departments.",
+  openGraph: {
+    title: "Faculty Directory – Ramdeo Sharda College",
+    description: "Browse the complete directory of faculty members at RDS College with their designations, departments, and academic profiles.",
+  },
+};
 
 export const dynamic = "force-dynamic";
 

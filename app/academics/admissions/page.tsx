@@ -1,10 +1,20 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import { 
   ClipboardList, 
   CheckCircle, 
   FileText, 
   CreditCard 
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Admissions 2026-27 – Apply Now",
+  description: "Apply for admission to Ramdeo Sharda College, Salmari for the 2026-27 academic session. Check eligibility criteria, required documents, application process, and fee details for B.Sc, B.A & B.Com programs.",
+  openGraph: {
+    title: "Admissions 2026-27 – Ramdeo Sharda College, Salmari",
+    description: "Step-by-step admission process for B.Sc, B.A, and B.Com courses. Affiliated to Purnea University. OFSS portal registration guide.",
+  },
+};
 
 const steps = [
   {

@@ -1,4 +1,11 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Health & Wellness Center",
+  description: "Campus health center at Ramdeo Sharda College providing primary consultation, first-aid, mental health support, and emergency medical services for students and staff.",
+};
+
 import { 
   HeartPulse, 
   PhoneCall, 

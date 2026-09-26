@@ -1,4 +1,5 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import { 
   BookOpen, 
   Target, 
@@ -12,6 +13,15 @@ import {
   Briefcase, 
   Sparkles 
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "About Ramdeo Sharda College",
+  description: "Learn about Ramdeo Sharda College, Salmari – our mission, vision, core values, and commitment to academic excellence. Affiliated to Purnea University, Katihar, Bihar.",
+  openGraph: {
+    title: "About Ramdeo Sharda College – Mission, Vision & Values",
+    description: "Discover the history, core values, and academic offerings of Ramdeo Sharda College, Salmari. Nurturing talent and shaping future leaders since inception.",
+  },
+};
 
 export default function AboutCollege() {
   const coreValues = [

@@ -1,5 +1,16 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
+
+export const metadata: Metadata = {
+  title: "Library – Knowledge Resource Center",
+  description: "Explore the library at Ramdeo Sharda College with 50,000+ books, 120+ journals, digital records, and dedicated reading spaces. Open to all students and faculty.",
+  openGraph: {
+    title: "Library – RDS College, Salmari",
+    description: "A resource-rich library with extensive book collections, journals, and digital records for academic excellence.",
+  },
+};
+
 import { 
   Book, 
   Search, 

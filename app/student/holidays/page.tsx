@@ -1,4 +1,5 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import PrintButton from "@/components/PrintButton";
 import dbConnect from "@/config/dbConnection";
 import HolidayModel, { HolidayType } from "@/models/holiday";
@@ -14,6 +15,16 @@ import {
   Info, 
   CalendarCheck
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Holidays & Vacation Calendar",
+  description: "View the complete holiday list and vacation schedule for Ramdeo Sharda College, Salmari. Includes gazetted holidays, restricted holidays, summer and winter vacations for the current academic year.",
+  openGraph: {
+    title: "Holiday Calendar – RDS College, Salmari",
+    description: "Official holiday and vacation schedule for Ramdeo Sharda College students and staff.",
+  },
+};
+
 
 async function getHolidaysAndVacations() {
   try {

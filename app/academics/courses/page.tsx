@@ -1,5 +1,15 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import { BookOpen, GraduationCap, Microscope, Briefcase } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Academic Programs & Courses",
+  description: "Explore undergraduate courses at Ramdeo Sharda College – B.Sc (Physics, Chemistry, Mathematics, Botany, Zoology), B.A (History, Political Science, Economics, Hindi, English), and B.Com. Affiliated to Purnea University.",
+  openGraph: {
+    title: "Courses Offered – Ramdeo Sharda College, Salmari",
+    description: "Comprehensive list of Science, Arts, and Commerce undergraduate programs offered at RDS College, affiliated to Purnea University.",
+  },
+};
 
 const courseData = [
   {

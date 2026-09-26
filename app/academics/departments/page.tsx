@@ -1,6 +1,16 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import { Layers, ChevronRight, GraduationCap } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Academic Departments",
+  description: "Explore academic departments at Ramdeo Sharda College – Faculty of Science (Physics, Chemistry, Mathematics, Botany, Zoology) and Faculty of Humanities & Arts (History, Political Science, Economics, Hindi, English, Psychology, Philosophy). Meet department heads.",
+  openGraph: {
+    title: "Departments – Ramdeo Sharda College, Salmari",
+    description: "Detailed list of academic departments with faculty heads under the Faculty of Science and Faculty of Humanities & Arts.",
+  },
+};
 
 const departmentData = [
   {

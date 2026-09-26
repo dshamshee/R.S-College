@@ -1,4 +1,11 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Conference Hall",
+  description: "150+ seat conference hall at Ramdeo Sharda College with HD video conferencing, professional audio, dual 4K laser projectors, and climate-controlled environment for seminars and meetings.",
+};
+
 import { 
   Users, 
   Video, 

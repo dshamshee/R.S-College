@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import dbConnect from "@/config/dbConnection";
 import FacultyModel from "@/models/faculty";
 import { CustomLayout } from "@/components/customeLayout";
@@ -18,10 +19,47 @@ interface FacultyPageProps {
 import mongoose from "mongoose";
 import { facultyData as staticFacultyData } from "@/lib/faculty-data";
 
+export async function generateMetadata({ params }: FacultyPageProps): Promise<Metadata> {
+  const { id } = await params;
+  let faculty: any = null;
+
+  try {
+    await dbConnect();
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      faculty = await FacultyModel.findById(id).lean();
+    }
+  } catch {
+    // fallback below
+  }
+
+  if (!faculty) {
+    faculty = staticFacultyData.find(
+      (f: any, idx: number) => String(f._id || f.id || idx) === String(id) || encodeURIComponent(f.name) === id
+    );
+  }
+
+  if (!faculty) {
+    return {
+      title: "Faculty Profile Not Found",
+    };
+  }
+
+  return {
+    title: `${faculty.name} – ${faculty.designation}`,
+    description: `Profile of ${faculty.name}, ${faculty.designation} in the Department of ${faculty.department} at Ramdeo Sharda College, Salmari. Contact, achievements, and academic details.`,
+    openGraph: {
+      title: `${faculty.name} – Faculty Profile`,
+      description: `${faculty.designation}, Department of ${faculty.department} at RDS College, Salmari.`,
+      ...(faculty.image ? { images: [{ url: faculty.image, alt: faculty.name }] } : {}),
+    },
+  };
+}
+
 export default async function FacultyDetailPage({ params }: FacultyPageProps) {
   const { id } = await params;
 
   let faculty: any = null;
+
 
   try {
     await dbConnect();

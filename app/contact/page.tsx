@@ -1,4 +1,5 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import { collegeDetails } from "@/config/collegeDetails";
 import ContactForm from "@/components/ContactForm";
 import { 
@@ -7,6 +8,15 @@ import {
   MapPin, 
   Clock, 
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Contact Us",
+  description: `Contact Ramdeo Sharda College, ${collegeDetails.address}, ${collegeDetails.district}, ${collegeDetails.state} – ${collegeDetails.pincode}. Phone: ${collegeDetails.phone}, Email: ${collegeDetails.email}. Office hours, campus map, and inquiry form.`,
+  openGraph: {
+    title: "Contact Ramdeo Sharda College, Salmari",
+    description: `Reach us at ${collegeDetails.phone} or ${collegeDetails.email}. Visit our campus at ${collegeDetails.address}, ${collegeDetails.district}.`,
+  },
+};
 
 export default function ContactPage() {
   return (

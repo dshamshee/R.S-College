@@ -1,4 +1,11 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Science Laboratories",
+  description: "State-of-the-art Physics, Chemistry, Botany, Zoology, and Computer laboratories at Ramdeo Sharda College equipped with modern instruments and safety protocols.",
+};
+
 import { 
   FlaskConical, 
   Atom, 

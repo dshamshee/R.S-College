@@ -1,6 +1,16 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import ResultForm from "@/components/ResultForm";
 import { ClipboardCheck } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Student Results Portal",
+  description: "Check your examination results at Ramdeo Sharda College. Enter your exam details to fetch your digital scorecard for B.Sc, B.A, and B.Com programs.",
+  openGraph: {
+    title: "Results Portal – RDS College, Salmari",
+    description: "Access examination results online for all undergraduate programs at Ramdeo Sharda College.",
+  },
+};
 
 export default function Result() {
   return (

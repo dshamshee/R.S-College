@@ -1,9 +1,19 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import VideoGalleryClient from "@/components/VideoGalleryClient";
 import { 
   Video, 
   Clapperboard
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Video Gallery",
+  description: "Watch videos from Ramdeo Sharda College – campus events, guest lectures, cultural programs, and student activities. Subscribe to our channel for updates.",
+  openGraph: {
+    title: "Video Gallery – Ramdeo Sharda College",
+    description: "Experience campus life through our video collection – events, lectures, and student activities at RDS College, Salmari.",
+  },
+};
 
 interface VideoItem {
   id: string;

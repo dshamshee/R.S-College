@@ -1,4 +1,5 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import { 
   Beaker, 
   BookOpen, 
@@ -8,6 +9,15 @@ import {
   ExternalLink,
   Award
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Research & Publications",
+  description: "Explore research initiatives and publications by faculty and students at Ramdeo Sharda College. Peer-reviewed journals, interdisciplinary projects, and research grants under Purnea University.",
+  openGraph: {
+    title: "Research & Publications – RDS College",
+    description: "Academic research, publications, and focus areas at Ramdeo Sharda College, Salmari. Machine Learning, Environmental Science, Regional Economics, and more.",
+  },
+};
 
 const publications = [
   {

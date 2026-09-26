@@ -1,4 +1,11 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Sports Complex & Facilities",
+  description: "Cricket ground, football field, volleyball courts, athletic track, indoor games, and fitness center at Ramdeo Sharda College. Promoting sports excellence alongside academics.",
+};
+
 import { 
   Trophy, 
   Dumbbell, 

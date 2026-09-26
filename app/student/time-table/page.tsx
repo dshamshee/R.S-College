@@ -1,9 +1,19 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import TimeTableClient from "@/components/TimeTableClient";
 import { 
   Download,
   CalendarDays,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Class Time Table",
+  description: "View the weekly class timetable for B.A, B.Sc, and B.Com programs at Ramdeo Sharda College, Salmari. Subject-wise schedule with room and teacher details.",
+  openGraph: {
+    title: "Timetable – RDS College, Salmari",
+    description: "Official class schedule for all undergraduate programs – B.A, B.Sc, and B.Com at Ramdeo Sharda College.",
+  },
+};
 
 // 1. Data Structure for all schedules
 const timeTableData = {

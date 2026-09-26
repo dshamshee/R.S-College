@@ -1,4 +1,5 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
 import { 
   Quote, 
   Award, 
@@ -13,6 +14,15 @@ import {
   Globe
 } from "lucide-react";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Principal's Message – Prof. (Dr.) Shekhar Kumar Jaiswal",
+  description: "Read the Principal's message and 5-year vision statement for Ramdeo Sharda College, Salmari. Prof. (Dr.) Shekhar Kumar Jaiswal shares the institution's roadmap for academic excellence.",
+  openGraph: {
+    title: "Principal's Message – Ramdeo Sharda College",
+    description: "A message from Prof. (Dr.) Shekhar Kumar Jaiswal, Principal of Ramdeo Sharda College, on academic excellence, infrastructure growth, and student empowerment.",
+  },
+};
 
 export default function Principal() {
   const visionMilestones = [

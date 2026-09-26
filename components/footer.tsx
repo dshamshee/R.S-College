@@ -51,7 +51,7 @@ export const Footer = () => {
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {footerSections.map((section, idx) => (
-            <div key={idx} className="flex flex-col gap-4">
+            <nav key={idx} className="flex flex-col gap-4" aria-label={section.title}>
               <h3 className="text-lg font-semibold border-b border-blue-400/30 pb-2 w-fit pr-10">
                 {section.title}
               </h3>
@@ -68,7 +68,7 @@ export const Footer = () => {
                   </li>
                 ))}
               </ul>
-            </div>
+            </nav>
           ))}
 
           {/* Contact Section */}

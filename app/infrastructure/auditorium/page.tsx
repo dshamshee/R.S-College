@@ -1,4 +1,11 @@
 import { CustomLayout } from "@/components/customeLayout";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Auditorium",
+  description: "500+ seat auditorium at Ramdeo Sharda College with acoustic design, professional sound and lighting systems, and multi-purpose staging for events and seminars.",
+};
+
 import { 
   Users2, 
   Music, 

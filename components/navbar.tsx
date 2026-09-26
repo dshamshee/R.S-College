@@ -75,7 +75,7 @@ const navItems = [
 
 export default function Navbar() {
     return (
-        <nav className="sticky top-0 z-50 w-full bg-[#002b5b] text-white shadow-md">
+        <nav className="sticky top-0 z-50 w-full bg-[#002b5b] text-white shadow-md" aria-label="Main navigation">
 
             {/* Desktop Navbar */}
             <div className="hidden lg:flex justify-center">
