@@ -93,14 +93,15 @@ export default function FacultyAdmin({ showNotification }: FacultyAdminProps) {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 
-            if (res.data.success) {
+            if (res.data.success && res.data.url) {
                 setImage(res.data.url);
                 showNotification("success", "Image compressed & uploaded to RDS successfully!");
             } else {
-                showNotification("error", res.data.message || "Failed to upload image.");
+                console.error("Upload response missing URL:", res.data);
+                showNotification("error", res.data.message || "Upload succeeded but no image URL was returned.");
             }
         } catch (err: any) {
-            console.error(err);
+            console.error("Image upload error:", err);
             showNotification("error", err.response?.data?.message || "Image upload failed.");
         } finally {
             setUploadingImage(false);
@@ -109,6 +110,12 @@ export default function FacultyAdmin({ showNotification }: FacultyAdminProps) {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (uploadingImage) {
+            showNotification("error", "Please wait for the image upload to complete before saving.");
+            return;
+        }
+
         if (!name.trim() || !designation.trim() || !department.trim()) {
             showNotification("error", "Name, Designation, and Department are required fields.");
             return;

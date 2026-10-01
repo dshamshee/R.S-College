@@ -91,10 +91,20 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
             uploadStream.end(buffer);
         });
 
+        // Validate upload result and extract URL with fallback
+        const imageUrl = uploadResult?.secure_url || uploadResult?.url;
+        if (!imageUrl) {
+            console.error("Cloudinary upload returned no URL:", uploadResult);
+            return NextResponse.json({
+                success: false,
+                message: "Upload succeeded but no URL was returned from Cloudinary.",
+            }, { status: 500 });
+        }
+
         return NextResponse.json({
             success: true,
             message: "File uploaded successfully to Cloudinary",
-            url: uploadResult.secure_url,
+            url: imageUrl,
             resource_type: uploadResult.resource_type,
             folder: targetFolder,
         }, { status: 200 });
