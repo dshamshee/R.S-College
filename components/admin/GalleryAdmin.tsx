@@ -76,7 +76,7 @@ export default function GalleryAdmin({ showNotification }: GalleryAdminProps) {
                 headers: { "Content-Type": "multipart/form-data" },
             });
 
-            if (res.data.success) {
+            if (res.data.success && res.data.url) {
                 if (file.type.startsWith("video/")) {
                     setVideoUrl(res.data.url);
                     setImageUrl("");
@@ -88,10 +88,11 @@ export default function GalleryAdmin({ showNotification }: GalleryAdminProps) {
                 }
                 showNotification("success", "Media compressed & uploaded to RDS successfully!");
             } else {
-                showNotification("error", res.data.message || "Failed to upload media.");
+                console.error("Upload response missing URL:", res.data);
+                showNotification("error", res.data.message || "Upload succeeded but no media URL was returned.");
             }
         } catch (err: any) {
-            console.error(err);
+            console.error("Media upload error:", err);
             showNotification("error", err.response?.data?.message || "Media upload failed.");
         } finally {
             setUploadingMedia(false);
@@ -100,6 +101,12 @@ export default function GalleryAdmin({ showNotification }: GalleryAdminProps) {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (uploadingMedia) {
+            showNotification("error", "Please wait for the media upload to complete before saving.");
+            return;
+        }
+
         if (!imageUrl && !videoUrl) {
             showNotification("error", "Please upload at least an Image or Video file.");
             return;

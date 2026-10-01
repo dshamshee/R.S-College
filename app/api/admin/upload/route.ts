@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { v2 as cloudinary } from "cloudinary";
 import { cookies } from "next/headers";
 import { verifyToken } from "@/lib/auth";
-import sharp from "sharp";
 
 // Configure Cloudinary
 cloudinary.config({
@@ -10,6 +9,17 @@ cloudinary.config({
     api_key: process.env.CLOUDINARY_API_KEY,
     api_secret: process.env.CLOUDINARY_API_SECRET,
 });
+
+// Dynamically load sharp — returns null if unavailable (e.g. production without native deps)
+async function getSharp() {
+    try {
+        const sharp = (await import("sharp")).default;
+        return sharp;
+    } catch {
+        console.warn("Sharp module not available, image compression will be skipped.");
+        return null;
+    }
+}
 
 export async function POST(request: NextRequest): Promise<NextResponse> {
     try {
@@ -52,20 +62,23 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         const isImage = file.type.startsWith("image/");
         const isVideo = file.type.startsWith("video/");
 
-        // 4. Compress image if it is an image using Sharp
+        // 4. Compress image using Sharp (if available)
         if (isImage) {
-            try {
-                // Compress image to WebP/JPEG format with max dimensions 1400px & 80% quality
-                const compressed = await sharp(buffer)
-                    .resize(1400, 1400, {
-                        fit: "inside",
-                        withoutEnlargement: true,
-                    })
-                    .webp({ quality: 80 })
-                    .toBuffer();
-                buffer = Buffer.from(compressed);
-            } catch (sharpError) {
-                console.warn("Sharp compression warning, falling back to original buffer:", sharpError);
+            const sharp = await getSharp();
+            if (sharp) {
+                try {
+                    // Compress image to WebP format with max dimensions 1400px & 80% quality
+                    const compressed = await sharp(buffer)
+                        .resize(1400, 1400, {
+                            fit: "inside",
+                            withoutEnlargement: true,
+                        })
+                        .webp({ quality: 80 })
+                        .toBuffer();
+                    buffer = Buffer.from(compressed);
+                } catch (sharpError) {
+                    console.warn("Sharp compression warning, falling back to original buffer:", sharpError);
+                }
             }
         }
 
